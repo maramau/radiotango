@@ -1,20 +1,38 @@
+#but-slide-panel {
+    position: absolute;
+    top: calc(50% - 1em);
+    right: 0;
+    width: 1vw;
+    height: 2em;
+}
+
 #panel-right {
     position: absolute;
     height: 100vh;
-    width: 42vw;
     background-color: green;
     right: calc(7vw + 0.5em);
     top: 0;
     z-index: 100;
     opacity: 0.9;
     box-shadow: -1.5px 0px 1px 1px lightgreen;
+
+    --width-panel-right: 42vw
+}
+#panel-right {
+    width: var(--width-panel-right);
+}
+#panel-right.open {
+    animation: slideLeft 1000ms ease forwards;
+}
+#panel-right.close {
+    animation: slideRight 1000ms ease forwards;
 }
 #panel-right .but-close{
     font-size: 2em;
     color: var(--color-text);
     position: absolute;
     top: 0.5em;
-    left: 1em;
+    right: 1em;
     width: 1em;
     text-align: center;
     cursor: pointer;
@@ -35,10 +53,10 @@
     height: 0;
 }
 .card-first .card-body.open {
-    animation: openCardFirst 1000ms ease forwards;
+    animation: grow 1000ms ease forwards;
 }
 .card-first .card-body.close {
-    animation: closeCardFirst 1000ms ease forwards;
+    animation: shrink 1000ms ease forwards;
 }
 
 .card-second {
@@ -48,10 +66,10 @@
     padding: 0;
 }
 .card-second.open {
-    animation: openCardSecond 1000ms ease forwards;
+    animation: slideUp 1000ms ease forwards;
 }
 .card-second.close {
-    animation: closeCardSecond 1000ms ease forwards;
+    animation: slideDown 1000ms ease forwards;
 }
 
 #but-playlist {
@@ -60,7 +78,7 @@
     background-color: blueviolet;
 }
 
-@keyframes openCardFirst {
+@keyframes grow {
     from {
         height: 0;
         opacity: 0;
@@ -73,7 +91,7 @@
     }
 
 }
-@keyframes closeCardFirst {
+@keyframes shrink {
     from {
         height: 70vh;
         opacity: 1;
@@ -86,8 +104,7 @@
     }
 }
 
-
-@keyframes openCardSecond {
+@keyframes slideUp {
     from {
         position: relative!important;
         background: #428bca;
@@ -101,11 +118,38 @@
         opacity: 1;
     }
 }
-@keyframes closeCardSecond {
+@keyframes slideDown {
     from {
         top: 0;
         height: 70vh;
         opacity: 1;
+    }
+
+    to {
+        position: relative!important;
+        background: #428bca;
+        height: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+
+    to {
+        top: 0;
+        width: var(--width-panel-right);
+        opacity: 1;
+    }
+}
+@keyframes slideRight {
+    from {
+        top: 0;
+        width: var(--width-panel-right);;
+        opacity: 0.9;
     }
 
     to {
@@ -119,18 +163,18 @@
 @media (max-width: 1200px) {
     #panel-right {
         right: calc(7vw + 0.5em);
-        width: 70vw;
+        --width-panel-right: 42vw;
     }
 }
 @media (max-width: 767px) {
     #panel-right {
         right: calc(13vw + 0.5em);
-        width: 70vw;
+        --width-panel-right: 70vw;
     }
 }
 @media (max-width: 478px) {
     #panel-right {
         right: calc(23vw + 0.5em);
-        width: 77vw;
+        --width-panel-right: 77vw;
     }
 }

@@ -5,6 +5,28 @@ import './styles.css';
 const PanelRight = (props) => {
   const variant = 'Info';
 
+  const togglePanel = () => {
+    const panel = document.querySelector('#panel-right');
+    
+    if (panel.classList.contains('open')) {
+      panel.classList.remove('open');
+      panel.classList.add('close');
+    } else {
+      panel.classList.remove('close');
+      panel.classList.add('open');
+    }
+  };
+  const toggleButton = () => {
+    const butClose = document.querySelector('#but-slide-panel');
+    const panel = document.querySelector('#panel-right');
+
+    if (panel.classList.contains('open')) {
+      butClose.textContent = '>';
+    } else {
+      butClose.textContent = '<';
+    }
+  }
+
   const toggleCard = () => {
     const cardFirst = document.querySelector('.card-first .card-body');
     const cardSecond = document.querySelector('.card-second');
@@ -25,8 +47,17 @@ const PanelRight = (props) => {
   };
 
   return (
-    <div id="panel-right">
-        <div className="but-close">&lt;-</div>
+    <>
+    <Button 
+      id="but-slide-panel"
+      bg="primary"
+      className="m-0"
+      onClick={() => {togglePanel(); toggleButton();}}
+    >
+      &lt;
+    </Button>
+    <div id="panel-right" className='close'>
+        <div className="but-close" onClick={togglePanel}>X</div>
         {props.content}
         
         <Card
@@ -66,6 +97,8 @@ const PanelRight = (props) => {
           </Card.Body>
         </Card>
     </div>
+    </>
+    
   );
 }
 
