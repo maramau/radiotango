@@ -9,7 +9,7 @@ import BarLeft        from 'components/bar-left/Component';
 import BarRight       from 'components/bar-right/Component';
 import PanelLeft      from 'components/panel-left/Component';
 import PanelRight     from 'components/panel-right/Component';
-//import Player         from 'components/player/Component';
+import Player         from 'components/player/Component';
 import Canvas         from 'components/canvas/Component';
 import {drawFunc}     from 'components/canvas/utils';
 
@@ -20,13 +20,16 @@ import './App.css';
 const App = () => {
   return (
     <>
+    <PlayerProvider>
       <BarLeft/>
       <PanelLeft/>
-      <PlayerProvider>
-        <Canvas drawFunc={drawFunc}/>
-      </PlayerProvider>
+      
+      <Canvas drawFunc={drawFunc}/>
+      <Player/>
+      
       <BarRight/>
-      <PanelRight/>
+      <PanelRight/>    
+    </PlayerProvider>
     </>
   );
 };

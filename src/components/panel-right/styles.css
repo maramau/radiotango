@@ -16,7 +16,7 @@
     opacity: 0.9;
     box-shadow: -1.5px 0px 1px 1px lightgreen;
 
-    --width-panel-right: 42vw
+    --width-panel-right: 42vw;
 }
 #panel-right {
     width: var(--width-panel-right);

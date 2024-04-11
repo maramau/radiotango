@@ -7,8 +7,14 @@ const PlayerProvider = ({ children }) => {
     const strDefaultPlayer = window.localStorage.getItem('player');
     const defaultPlayer = strDefaultPlayer? JSON.parse(strDefaultPlayer) : {idxAlbum: 0, idxSong: 0};
     const [player, setPlayer] = useState(defaultPlayer);
+    
+    //const [contentLeft, setContentLeft] = useState('Home');
+    //const [contentRight, setContentRight] = useState(null);
+    
     const provider = {
         player,
+        //contentLeft,
+        //contentRight,
         changePlayer: instruction => {
             const instructions = {
                 prev: () => {
@@ -62,7 +68,23 @@ const PlayerProvider = ({ children }) => {
                 setPlayer(newPlayer);
                 //window.localStorage.setItem('player', JSON.stringify(newPlayer));
             }
+        },
+        changeContentLeft: contentLeft => {
+            // import Pages
+            // import Genres from components/index;
+
+            // Take JSX from a component from Genres
+            // return Genres.Jazz for example
+            // or from pages
+            // Maybe even do an index with all of them mixed
+        },
+        changeContentRight: contentRight => {
+            // When clicking on a genre from Genres.X component
+            // check genre?
+            // choose JSX from an index with subgenres
+            // return Subgenre.Acid_jazz
         }
+
     };
 
     return (
