@@ -1,0 +1,136 @@
+#panel-right {
+    position: absolute;
+    height: 100vh;
+    width: 42vw;
+    background-color: green;
+    right: calc(7vw + 0.5em);
+    top: 0;
+    z-index: 100;
+    opacity: 0.9;
+    box-shadow: -1.5px 0px 1px 1px lightgreen;
+}
+#panel-right .but-close{
+    font-size: 2em;
+    color: var(--color-text);
+    position: absolute;
+    top: 0.5em;
+    left: 1em;
+    width: 1em;
+    text-align: center;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.card-first {
+    box-sizing: border-box;
+}
+.card-first .card-header {
+    cursor: pointer;
+    height: 15vh;
+}
+.card-first .card-body {
+    height: 70vh;
+}
+.card-first .card-body.close {
+    height: 0;
+}
+.card-first .card-body.open {
+    animation: openCardFirst 1000ms ease forwards;
+}
+.card-first .card-body.close {
+    animation: closeCardFirst 1000ms ease forwards;
+}
+
+.card-second {
+    position: relative!important;
+    opacity: 0;
+    height: 0;
+    padding: 0;
+}
+.card-second.open {
+    animation: openCardSecond 1000ms ease forwards;
+}
+.card-second.close {
+    animation: closeCardSecond 1000ms ease forwards;
+}
+
+#but-playlist {
+    height: 15%;
+    width: 100%;
+    background-color: blueviolet;
+}
+
+@keyframes openCardFirst {
+    from {
+        height: 0;
+        opacity: 0;
+        padding: 0;
+    }
+
+    to {
+        height: 70vh;
+        opacity: 1;
+    }
+
+}
+@keyframes closeCardFirst {
+    from {
+        height: 70vh;
+        opacity: 1;
+    }
+
+    to {
+        height: 0;
+        opacity: 0;
+        padding: 0;
+    }
+}
+
+
+@keyframes openCardSecond {
+    from {
+        position: relative!important;
+        background: #428bca;
+        height: 0;
+        opacity: 0;
+    }
+
+    to {
+        top: 0;
+        height: 70vh;
+        opacity: 1;
+    }
+}
+@keyframes closeCardSecond {
+    from {
+        top: 0;
+        height: 70vh;
+        opacity: 1;
+    }
+
+    to {
+        position: relative!important;
+        background: #428bca;
+        height: 0;
+        opacity: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    #panel-right {
+        right: calc(7vw + 0.5em);
+        width: 70vw;
+    }
+}
+@media (max-width: 767px) {
+    #panel-right {
+        right: calc(13vw + 0.5em);
+        width: 70vw;
+    }
+}
+@media (max-width: 478px) {
+    #panel-right {
+        right: calc(23vw + 0.5em);
+        width: 77vw;
+    }
+}

@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import React          from 'react';
+
+import PlayerProvider from 'context/player/Provider';
+
+import About          from 'pages/about/Component';
+import Contact        from 'pages/contact/Component';
+
+import BarLeft        from 'components/bar-left/Component';
+import BarRight       from 'components/bar-right/Component';
+import PanelLeft      from 'components/panel-left/Component';
+import PanelRight     from 'components/panel-right/Component';
+//import Player         from 'components/player/Component';
+import Canvas         from 'components/canvas/Component';
+import {drawFunc}     from 'components/canvas/utils';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-function App() {
+//<Player/>
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BarLeft/>
+      <PanelLeft/>
+      <PlayerProvider>
+        <Canvas drawFunc={drawFunc}/>
+      </PlayerProvider>
+      <BarRight/>
+      <PanelRight/>
+    </>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,15 @@
+.rhap_container {
+    position: fixed;
+    bottom: 0;
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+    height: var(--player-height);
+    z-index: 100;
+}
+.rhap_container svg {
+    color: var(--color-secondary-soft);
+}
+
+#rhap_current-time,.rhap_time {
+    color: var(--color-text);
+}

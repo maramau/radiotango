@@ -1,0 +1,44 @@
+#container-video {
+    --color-text-shadow: var(--color-primary);
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+#overlay-shape::after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-bottom: 30vw solid transparent;
+    border-left: 300vw solid transparent;
+    border-right: 25vh solid var(--color-primary-soft-rgba);
+    top: 0;
+    right: 0;
+    content: '';
+}
+
+div video {
+    width: 100%;
+    display: block;
+}
+#overlay-text::after {
+    content: 'Sobre nosotros';
+    font-size: 10vh;
+    color: var(--color-text);
+    position: absolute;
+    left: 7%;
+    bottom: 5%;
+    text-shadow: 0 0 1vw var(--color-primary);
+}
+
+@media (max-width: 800px) {
+    #container-video {
+        width: 100%;
+    }
+}
+
+.text-white {
+    color: white;
+    background-color: var(--color-primary-soft-rgba);
+    margin: 0;
+    padding: 0;
+}

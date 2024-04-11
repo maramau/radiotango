@@ -1,0 +1,39 @@
+#panel-left {
+    position: absolute;
+    height: 100vh;
+    width: 42vw;
+    background-color: gray;
+    left: 7vw;
+    top: 0;
+    z-index: 50;
+    opacity: 0.9;
+}
+#panel-left .but-close{
+    font-size: 2em;
+    color: var(--color-text);
+    position: absolute;
+    top: 0.5em;
+    right: 1em;
+    width: 1em;
+    text-align: center;
+    cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+    #panel-left {
+        left: 7vw;
+        width: 70vw;
+    }
+}
+@media (max-width: 767px) {
+    #panel-left {
+        left: 13vw;
+        width: 70vw;
+    }
+}
+@media (max-width: 478px) {
+    #panel-left {
+        left: 23vw;
+        width: 77vw;
+    }
+}
