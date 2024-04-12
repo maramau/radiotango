@@ -1,6 +1,6 @@
 import React          from 'react';
 
-import PlayerProvider from 'context/player/Provider';
+import ContentProvider from 'context/content/Provider';
 
 import About          from 'pages/about/Component';
 import Contact        from 'pages/contact/Component';
@@ -20,7 +20,7 @@ import './App.css';
 const App = () => {
   return (
     <>
-    <PlayerProvider>
+    <ContentProvider>
       <BarLeft/>
       <PanelLeft/>
       
@@ -29,7 +29,7 @@ const App = () => {
       
       <BarRight/>
       <PanelRight/>    
-    </PlayerProvider>
+    </ContentProvider>
     </>
   );
 };

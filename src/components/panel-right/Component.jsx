@@ -1,8 +1,13 @@
-import {Button, Card} from 'react-bootstrap';
+import { useContext } from 'react';
+import ContentContext from 'context/content/Context';
+
+import {Button, Card, ListGroup} from 'react-bootstrap';
 
 import './styles.css';
 
 const PanelRight = (props) => {
+  const { contentRight } = useContext(ContentContext);
+
   const variant = 'Info';
 
   const togglePanel = () => {
@@ -66,12 +71,10 @@ const PanelRight = (props) => {
           text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
           className="mb-0 card-first"
         >
-          <Card.Header>Header</Card.Header>
+          <Card.Header>{contentRight.title}</Card.Header>
           <Card.Body className='open'>
             <Card.Title>{variant} Card Title 1 </Card.Title>
-            <Card.Text>
-
-            </Card.Text>
+              {contentRight.body}
           </Card.Body>
         </Card>
 
@@ -90,10 +93,16 @@ const PanelRight = (props) => {
           className="m-0 card-second close"
         >
           <Card.Body>
-            <Card.Title>{variant} Card Title 2 </Card.Title>
-            <Card.Text>
+            <ListGroup as="ol" numbered variant="flush">
+              {contentRight.playlist.map((song) => {
+                const label = `${song.artist} - ${song.song}`;
 
-            </Card.Text>
+                return (
+                  <ListGroup.Item key={label} as="li">{label}</ListGroup.Item>
+                );
+              })}
+            </ListGroup>
+            
           </Card.Body>
         </Card>
     </div>

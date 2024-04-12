@@ -37,6 +37,10 @@
     background-color: bisque;
 }
 
+.card-body {
+    overflow-y: scroll;
+}
+
 @keyframes slideLeft {
     from {
         width: var(--width-panel-left);

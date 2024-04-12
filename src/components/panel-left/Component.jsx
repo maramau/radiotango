@@ -1,8 +1,12 @@
+import { useContext } from 'react';
+import ContentContext from 'context/content/Context';
+
 import {Button, Card} from 'react-bootstrap';
 
 import './styles.css';
 
 const PanelLeft = (props) => {
+  const { contentLeft } = useContext(ContentContext);
   const variant = 'Danger';
 
   const togglePanel = () => {
@@ -47,12 +51,10 @@ const PanelLeft = (props) => {
           text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
           className="mb-0 card-first"
         >
-          <Card.Header>Header</Card.Header>
+          <Card.Header>{contentLeft.title}</Card.Header>
           <Card.Body className='open'>
             <Card.Title>{variant} Card Title 1 </Card.Title>
-            <Card.Text>
-
-            </Card.Text>
+            {contentLeft.body}
           </Card.Body>
         </Card>
 

@@ -1,21 +1,25 @@
 import React, { useState } from "react";
 
-import PlayerContext from "./Context";
-import albums from "../utils";
+import ContentContext from "./Context";
+import * as Genres from "pages/genres/index";
+import * as Pages from "pages/pages/index";
 
-const PlayerProvider = ({ children }) => {  
+const ContextProvider = ({ children }) => {  
     const strDefaultPlayer = window.localStorage.getItem('player');
     const defaultPlayer = strDefaultPlayer? JSON.parse(strDefaultPlayer) : {idxAlbum: 0, idxSong: 0};
     const [player, setPlayer] = useState(defaultPlayer);
     
-    //const [contentLeft, setContentLeft] = useState('Home');
-    //const [contentRight, setContentRight] = useState(null);
+    
+    const keysRight = Object.keys(Genres);
+    const idxRight = 0;
+    const [contentLeft, setContentLeft] = useState('Home');
+    const [contentRight, setContentRight] = useState(Genres[keysRight[idxRight]].default);
     
     const provider = {
-        player,
-        //contentLeft,
-        //contentRight,
-        changePlayer: instruction => {
+        //player,
+        contentLeft,
+        contentRight,
+        /*changePlayer: instruction => {
             const instructions = {
                 prev: () => {
                     const idxAlbum = player.idxAlbum;
@@ -68,7 +72,7 @@ const PlayerProvider = ({ children }) => {
                 setPlayer(newPlayer);
                 //window.localStorage.setItem('player', JSON.stringify(newPlayer));
             }
-        },
+        },*/
         changeContentLeft: contentLeft => {
             // import Pages
             // import Genres from components/index;
@@ -77,21 +81,22 @@ const PlayerProvider = ({ children }) => {
             // return Genres.Jazz for example
             // or from pages
             // Maybe even do an index with all of them mixed
+            if (Pages[contentLeft]) {
+                setContentLeft(Pages[contentLeft].default);
+            }
         },
         changeContentRight: contentRight => {
-            // When clicking on a genre from Genres.X component
-            // check genre?
-            // choose JSX from an index with subgenres
-            // return Subgenre.Acid_jazz
+            if (Genres[contentRight]) {
+                setContentRight(Genres[contentRight].default);
+            }
         }
-
     };
 
     return (
-        <PlayerContext.Provider value={provider}>
+        <ContentContext.Provider value={provider}>
             {children}
-        </PlayerContext.Provider>
+        </ContentContext.Provider>
     );
 };
 
-export default PlayerProvider;
+export default ContextProvider;
