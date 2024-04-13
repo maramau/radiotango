@@ -26,6 +26,7 @@ const PanelRight = (props) => {
       panel.classList.add('open');
     }
   };
+
   const toggleButton = () => {
     const butClose = document.querySelector('#but-slide-panel');
     const panel = document.querySelector('#panel-right');
@@ -35,7 +36,7 @@ const PanelRight = (props) => {
     } else {
       butClose.textContent = '<';
     }
-  }
+  };
 
   const toggleCard = () => {
     const cardFirst = document.querySelector('#panel-right .card-first .card-body');

@@ -41,7 +41,7 @@ const PanelLeft = (props) => {
   };
 
   return (
-    <div id="panel-left">
+    <div id="panel-left" className='close'>
         <div className="but-close" onClick={togglePanel}>X</div>
         {props.content}
         

@@ -4,7 +4,6 @@
     width: 42vw;
     background-color: gray;
     left: 7vw;
-    top: 0;
     z-index: 50;
     opacity: 0.9;
 
@@ -14,10 +13,14 @@
     width: var(--width-panel-left);
 }
 #panel-left.open {
-    animation: slideRight 1000ms ease forwards;
+    animation: slideLeft2 1000ms ease forwards;
+    width: var(--width-panel-left);
+    opacity: 0.9;
 }
 #panel-left.close {
-    animation: slideLeft 1000ms ease forwards;
+    animation: slideRight2 1000ms ease forwards;
+    width: 0;
+    opacity: 0;
 }
 #panel-left .but-close{
     font-size: 2em;
@@ -31,6 +34,23 @@
     z-index: 100;
 }
 
+.card-body {
+    overflow-y: scroll;
+}
+
+.card-first {
+    box-sizing: border-box;
+}
+.card-first .card-header {
+    height: 15vh;
+}
+.card-first .card-body {
+    height: 70vh;
+}
+.card-first .card-body.close {
+    height: 0;
+}
+
 #but-genres {
     height: 15%;
     width: 100%;
@@ -40,18 +60,7 @@
     overflow-y: scroll;
 }
 
-@keyframes slideLeft {
-    from {
-        width: var(--width-panel-left);
-        opacity: 0.9;
-    }
-
-    to {
-        width: 0;
-        opacity: 1;
-    }
-}
-@keyframes slideRight {
+@keyframes slideRight2 {
     from {
         width: 0;
         opacity: 0;
@@ -59,7 +68,18 @@
 
     to {
         width: var(--width-panel-left);
-        opacity: 0.0;
+        opacity: 0.9;
+    }
+}
+@keyframes slideLeft2 {
+    from {
+        width: var(--width-panel-left);
+        opacity: 0.9;
+    }
+
+    to {
+        width: 0;
+        opacity: 0;
     }
 }
 

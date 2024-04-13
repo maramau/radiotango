@@ -24,13 +24,13 @@ const Component = () => {
 
     return (
         <>
-        <ListGroup as="ol" numbered>
+        <ListGroup as="ol" numbered variant="primary">
             {genres.map((genre) => {
                 const label = genre.name;
                 const href = genre.href;
 
                 return (
-                    <ListGroup.Item action key={label} as="li" onClick={handleClick} data-href={href}>
+                    <ListGroup.Item action variant="primary" key={label} as="li" onClick={handleClick} data-href={href}>
                         {label}
                     </ListGroup.Item>
                 );
