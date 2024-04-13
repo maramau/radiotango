@@ -9,7 +9,6 @@
 #panel-right {
     position: absolute;
     height: 100vh;
-    background-color: green;
     right: calc(7vw + 0.5em);
     top: 0;
     z-index: 100;
@@ -23,9 +22,13 @@
 }
 #panel-right.open {
     animation: slideLeft 1000ms ease forwards;
+    width: var(--width-panel-right);
+    opacity: 1;
 }
 #panel-right.close {
     animation: slideRight 1000ms ease forwards;
+    width: 0;
+    opacity: 0;
 }
 #panel-right .but-close{
     font-size: 2em;
@@ -47,7 +50,6 @@
     box-sizing: border-box;
 }
 .card-first .card-header {
-    cursor: pointer;
     height: 15vh;
 }
 .card-first .card-body {
@@ -79,7 +81,6 @@
 #but-playlist {
     height: 15%;
     width: 100%;
-    background-color: blueviolet;
 }
 
 @keyframes grow {
@@ -111,7 +112,6 @@
 @keyframes slideUp {
     from {
         position: relative!important;
-        background: #428bca;
         height: 0;
         opacity: 0;
     }
@@ -131,7 +131,6 @@
 
     to {
         position: relative!important;
-        background: #428bca;
         height: 0;
         opacity: 0;
     }
@@ -144,7 +143,6 @@
     }
 
     to {
-        top: 0;
         width: var(--width-panel-right);
         opacity: 1;
     }
@@ -158,8 +156,7 @@
 
     to {
         position: relative!important;
-        background: #428bca;
-        height: 0;
+        width: 0;
         opacity: 0;
     }
 }

@@ -2,13 +2,18 @@ import { useContext } from 'react';
 import ContentContext from 'context/content/Context';
 
 import {Button, Card, ListGroup} from 'react-bootstrap';
+import YouTube from 'react-youtube';
 
 import './styles.css';
 
 const PanelRight = (props) => {
-  const { contentRight } = useContext(ContentContext);
+  const { contentRight, player, changePlayer } = useContext(ContentContext);
 
   const variant = 'Info';
+  const opts = {
+    height: "240",
+    width: "480"
+  };
 
   const togglePanel = () => {
     const panel = document.querySelector('#panel-right');
@@ -33,8 +38,8 @@ const PanelRight = (props) => {
   }
 
   const toggleCard = () => {
-    const cardFirst = document.querySelector('.card-first .card-body');
-    const cardSecond = document.querySelector('.card-second');
+    const cardFirst = document.querySelector('#panel-right .card-first .card-body');
+    const cardSecond = document.querySelector('#panel-right .card-second');
 
     if (cardFirst.classList.contains('open')) {
       cardFirst.classList.remove('open');
@@ -93,16 +98,23 @@ const PanelRight = (props) => {
           className="m-0 card-second close"
         >
           <Card.Body>
-            <ListGroup as="ol" numbered variant="flush">
-              {contentRight.playlist.map((song) => {
+            <ListGroup as="ol" numbered variant="primary" className="mb-2">
+              {contentRight.playlist.map((song, idx) => {
                 const label = `${song.artist} - ${song.song}`;
 
                 return (
-                  <ListGroup.Item key={label} as="li">{label}</ListGroup.Item>
+                  <ListGroup.Item action variant="primary" key={label} onClick={() => {changePlayer(song)}}>
+                    {label}
+                  </ListGroup.Item>
                 );
               })}
             </ListGroup>
-            
+            <YouTube
+              className="text-center"
+              videoId={player.yt}
+              title={`${player.artist} - ${player.song}`}
+              opts={opts}
+            />
           </Card.Body>
         </Card>
     </div>

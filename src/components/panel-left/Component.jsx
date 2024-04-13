@@ -22,8 +22,8 @@ const PanelLeft = (props) => {
   };
   
   const toggleCard = () => {
-    const cardFirst = document.querySelector('.card-first .card-body');
-    const cardSecond = document.querySelector('.card-second');
+    const cardFirst = document.querySelector('#panel-left .card-first .card-body');
+    const cardSecond = document.querySelector('#panel-left .card-second');
 
     if (cardFirst.classList.contains('open')) {
       cardFirst.classList.remove('open');

@@ -24,18 +24,18 @@ const Component = () => {
 
     return (
         <>
-            <ListGroup as="ol" numbered variant="flush">
-                {genres.map((genre) => {
-                    const label = genre.name;
-                    const href = genre.href;
+        <ListGroup as="ol" numbered>
+            {genres.map((genre) => {
+                const label = genre.name;
+                const href = genre.href;
 
-                    return (
-                        <ListGroup.Item key={label} as="li" onClick={handleClick} data-href={href}>
-                            {label}
-                        </ListGroup.Item>
-                    );
-                })}
-            </ListGroup>
+                return (
+                    <ListGroup.Item action key={label} as="li" onClick={handleClick} data-href={href}>
+                        {label}
+                    </ListGroup.Item>
+                );
+            })}
+        </ListGroup>
         </>
     );
 };

@@ -13,7 +13,6 @@ import Player         from 'components/player/Component';
 import Canvas         from 'components/canvas/Component';
 import {drawFunc}     from 'components/canvas/utils';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 //<Player/>

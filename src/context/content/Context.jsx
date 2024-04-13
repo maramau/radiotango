@@ -1,7 +1,7 @@
 import { createContext } from 'react';
 
 const ContentContext = createContext({
-    //player: null,
+    player: null,
     contentLeft: null,
     contentRight: null,
 });

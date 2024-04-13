@@ -9,7 +9,7 @@ const Player = () => {
 
     return (
         <>
-        <div style={{width: '100%', height: '2em', position: 'absolute', bottom: '0', backgroundColor:'cyan'}}>
+        <div>
 
         </div>
         </>
