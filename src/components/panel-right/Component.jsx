@@ -7,7 +7,7 @@ import YouTube from 'react-youtube';
 import './styles.css';
 
 const PanelRight = (props) => {
-  const { contentRight, player, changePlayer } = useContext(ContentContext);
+  const { isClosedRight, contentRight, player, changeIsClosedRight, changePlayer } = useContext(ContentContext);
 
   const variant = 'Info';
   const opts = {
@@ -63,12 +63,12 @@ const PanelRight = (props) => {
       id="but-slide-panel"
       bg="primary"
       className="m-0"
-      onClick={() => {togglePanel(); toggleButton();}}
+      onClick={() => {changeIsClosedRight(true); togglePanel(); toggleButton();}}
     >
-      &lt;
+      {isClosedRight? "<" : ">"}
     </Button>
-    <div id="panel-right" className='close'>
-        <div className="but-close" onClick={togglePanel}>X</div>
+    <div id="panel-right" className={isClosedRight? "close" : "open"}>
+        <div className="but-close" onClick={() => {changeIsClosedRight(true); togglePanel(); toggleButton();}}>X</div>
         {props.content}
         
         <Card
@@ -79,7 +79,6 @@ const PanelRight = (props) => {
         >
           <Card.Header>{contentRight.title}</Card.Header>
           <Card.Body className='open'>
-            <Card.Title>{variant} Card Title 1 </Card.Title>
               {contentRight.body}
           </Card.Body>
         </Card>
@@ -89,7 +88,7 @@ const PanelRight = (props) => {
           className='m-0'
           onClick={toggleCard}
         >
-          Buton
+          Playlist
         </Button>
 
         <Card

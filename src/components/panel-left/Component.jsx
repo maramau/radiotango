@@ -6,7 +6,7 @@ import {Button, Card} from 'react-bootstrap';
 import './styles.css';
 
 const PanelLeft = (props) => {
-  const { contentLeft } = useContext(ContentContext);
+  const { contentLeft, isClosedLeft, changeIsClosedLeft } = useContext(ContentContext);
   const variant = 'Danger';
 
   const togglePanel = () => {
@@ -39,10 +39,10 @@ const PanelLeft = (props) => {
       cardSecond.classList.add('close');
     }
   };
-
+  // The logic on isClosedLeft is backwards but it works. I'm leaving it for now
   return (
-    <div id="panel-left" className='close'>
-        <div className="but-close" onClick={togglePanel}>X</div>
+    <div id="panel-left" className={!isClosedLeft? "close" : "open"}>
+        <div className="but-close" onClick={() => {changeIsClosedLeft(true); togglePanel();}}>X</div>
         {props.content}
         
         <Card
@@ -53,7 +53,6 @@ const PanelLeft = (props) => {
         >
           <Card.Header>{contentLeft.title}</Card.Header>
           <Card.Body className='open'>
-            <Card.Title>{variant} Card Title 1 </Card.Title>
             {contentLeft.body}
           </Card.Body>
         </Card>
@@ -73,7 +72,6 @@ const PanelLeft = (props) => {
           className="m-0 card-second close"
         >
           <Card.Body>
-            <Card.Title>{variant} Card Title 2 </Card.Title>
             <Card.Text>
 
             </Card.Text>

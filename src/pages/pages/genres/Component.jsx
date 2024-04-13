@@ -4,7 +4,7 @@ import ContentContext from 'context/content/Context';
 import { ListGroup } from "react-bootstrap";
 
 const Component = () => {
-    const { changeContentRight } = useContext(ContentContext);
+    const { changeContentRight, changeIsClosedRight } = useContext(ContentContext);
     const genres = [
         {
             name: 'Acid Jazz',
@@ -20,6 +20,7 @@ const Component = () => {
         const idxContentRight = target.dataset.href;
     
         changeContentRight(idxContentRight);
+        changeIsClosedRight(false);
     };
 
     return (

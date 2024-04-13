@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+  }
+  .welcome-container {
+    text-align: center;
+    padding: 50px;
+  }
+  .welcome-title {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  .welcome-text {
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
