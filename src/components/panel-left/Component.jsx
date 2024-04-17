@@ -1,7 +1,9 @@
-import { useContext } from 'react';
-import ContentContext from 'context/content/Context';
+import { useContext }       from 'react';
+import ContentContext       from 'context/content/Context';
 
-import {Button, Card} from 'react-bootstrap';
+import {Button, Card}       from 'react-bootstrap';
+
+import { FaRegWindowClose } from "react-icons/fa";
 
 import './styles.css';
 
@@ -42,7 +44,9 @@ const PanelLeft = (props) => {
   // The logic on isClosedLeft is backwards but it works. I'm leaving it for now
   return (
     <div id="panel-left" className={!isClosedLeft? "close" : "open"}>
-        <div className="but-close" onClick={() => {changeIsClosedLeft(true); togglePanel();}}>X</div>
+        <div className="but-close" onClick={() => {changeIsClosedLeft(true); togglePanel();}}>
+          <FaRegWindowClose/>
+        </div>
         {props.content}
         
         <Card

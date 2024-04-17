@@ -3,7 +3,8 @@ import { useContext }       from 'react';
 import {  Button, 
           Card, 
           ListGroup}        from 'react-bootstrap';
-import {  FaChevronLeft, 
+import {  FaRegWindowClose,
+          FaChevronLeft, 
           FaChevronRight }  from 'react-icons/fa';
 import    YouTube           from 'react-youtube';
 
@@ -76,7 +77,9 @@ const PanelRight = (props) => {
       }
     </Button>
     <div id="panel-right" className={isClosedRight? "close" : "open"}>
-        <div className="but-close" onClick={() => {changeIsClosedRight(true); togglePanel(); toggleButton();}}>X</div>
+        <div className="but-close" onClick={() => {changeIsClosedRight(true); togglePanel(); toggleButton();}}>
+          <FaRegWindowClose/>
+        </div>
         {props.content}
         
         <Card
