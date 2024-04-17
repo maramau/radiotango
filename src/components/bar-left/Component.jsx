@@ -15,7 +15,7 @@ import Stack          from 'react-bootstrap/Stack';
 import './styles.css';
 
 const BarLeft = () => {
-  const { changeContentLeft, changeIsClosedLeft } = useContext(ContentContext);
+  const { changeContentLeft } = useContext(ContentContext);
 
   return (
     <div className="stack-container">
@@ -40,7 +40,7 @@ const BarLeft = () => {
                 <Button variant="secondary">
                   <FaInfo/>
                 </Button>
-                <Button variant="secondary">
+                <Button variant="secondary" onClick={() => {changeContentLeft('Mode');}}>
                   <FaExchangeAlt/>
                 </Button>
             </div>
