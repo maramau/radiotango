@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState }  from "react";
 
-import ContentContext from "./Context";
-import * as Genres from "pages/genres/index";
-import * as Pages from "pages/pages/index";
+import ContentContext       from "./Context";
+import * as Genres          from "pages/genres/index";
+import * as Pages           from "pages/pages/index";
 
 const ContextProvider = ({ children }) => {  
     const strDefaultPlayer = window.localStorage.getItem('player');
@@ -15,6 +15,7 @@ const ContextProvider = ({ children }) => {
     const [contentRight, setContentRight] = useState(Genres[keysRight[idxRight]].default);
     const [isClosedLeft, setIsClosedLeft] = useState(true);
     const [isClosedRight, setIsClosedRight] = useState(true);
+    const [showCanvas, setShowCanvas] = useState(false);
     
     const provider = {
         player,
@@ -22,6 +23,7 @@ const ContextProvider = ({ children }) => {
         contentRight,
         isClosedLeft,
         isClosedRight,
+        showCanvas,
         changePlayer: song => {
             setPlayer(song);
             //window.localStorage.setItem('player', JSON.stringify(newPlayer));
@@ -45,6 +47,9 @@ const ContextProvider = ({ children }) => {
         },
         changeIsClosedRight: isClosed => {
             setIsClosedRight(isClosed);
+        },
+        changeShowCanvas: showCanvas => {
+            setShowCanvas(showCanvas);
         }
     };
 

@@ -1,12 +1,18 @@
-import { useState } from 'react';
-import Form from 'react-bootstrap/Form';
+import {    useState, 
+            useContext }    from 'react';
+
+import Form                 from 'react-bootstrap/Form';
+
+import ContentContext       from 'context/content/Context';
 
 import './styles.css';
 
 const Component = () => {
     const [checkedFull, setCheckedFull] = useState(false);
 
-    const toggleFullscreen = (e) => {
+    const { showCanvas, changeShowCanvas } = useContext(ContentContext);
+
+    const toggleFullscreen = () => {
         const elem = document.documentElement;
 
         if (checkedFull) {
@@ -29,6 +35,9 @@ const Component = () => {
         }
         setCheckedFull(checkedFull => !checkedFull);
     };
+    const toggleAnimation = () => {
+        changeShowCanvas(!showCanvas);
+    };
 
     return (
         <>
@@ -41,6 +50,7 @@ const Component = () => {
             <Form.Check
                 type="switch"
                 label="Background animation"
+                onChange={toggleAnimation}
             />
         </Form>
         </>

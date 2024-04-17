@@ -1,14 +1,11 @@
 /* Safari */
 :-webkit-full-screen {
-    filter: blur(1px);
 }
   
 /* IE11 */
 :-ms-fullscreen {
-    filter: blur(1px);
 }
   
 /* Standard syntax */
 :fullscreen {
-    filter: blur(1px);
 }

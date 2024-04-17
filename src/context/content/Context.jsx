@@ -4,8 +4,9 @@ const ContentContext = createContext({
     player: null,
     contentLeft: null,
     contentRight: null,
-    isClosedLeft: null,
-    isClosedRight: null,
+    isClosedLeft: true,
+    isClosedRight: true,
+    showCanvas: false,
 });
 
 export default ContentContext;

@@ -11,11 +11,11 @@ import PanelLeft      from 'components/panel-left/Component';
 import PanelRight     from 'components/panel-right/Component';
 import Player         from 'components/player/Component';
 import Canvas         from 'components/canvas/Component';
-import {drawFunc}     from 'components/canvas/utils';
+//import {drawFunc}     from 'components/canvas/utils';
+import {drawFunc}     from 'components/canvas/draw2';
 
 import './App.css';
 
-//<Player/>
 const App = () => {
   return (
     <>
