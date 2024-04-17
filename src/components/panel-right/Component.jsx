@@ -1,8 +1,13 @@
-import { useContext } from 'react';
-import ContentContext from 'context/content/Context';
+import { useContext }       from 'react';
 
-import {Button, Card, ListGroup} from 'react-bootstrap';
-import YouTube from 'react-youtube';
+import {  Button, 
+          Card, 
+          ListGroup}        from 'react-bootstrap';
+import {  FaChevronLeft, 
+          FaChevronRight }  from 'react-icons/fa';
+import    YouTube           from 'react-youtube';
+
+import    ContentContext    from 'context/content/Context';
 
 import './styles.css';
 
@@ -65,7 +70,10 @@ const PanelRight = (props) => {
       className="m-0"
       onClick={() => {changeIsClosedRight(true); togglePanel(); toggleButton();}}
     >
-      {isClosedRight? "<" : ">"}
+      {isClosedRight
+      ? <FaChevronLeft/>
+      : <FaChevronRight/>
+      }
     </Button>
     <div id="panel-right" className={isClosedRight? "close" : "open"}>
         <div className="but-close" onClick={() => {changeIsClosedRight(true); togglePanel(); toggleButton();}}>X</div>
