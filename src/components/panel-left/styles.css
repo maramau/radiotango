@@ -13,12 +13,12 @@
     width: var(--width-panel-left);
 }
 #panel-left.open {
-    animation: slideLeft2 1000ms ease forwards;
+    animation: slideLeft2 750ms ease forwards;
     width: var(--width-panel-left);
     opacity: 0.9;
 }
 #panel-left.close {
-    animation: slideRight2 1000ms ease forwards;
+    animation: slideRight2 750ms ease forwards;
     width: 0;
     opacity: 0;
 }

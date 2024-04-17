@@ -11,12 +11,22 @@ const ContextProvider = ({ children }) => {
     
     const idxRight = 0;
     const keysRight = Object.keys(Genres);
+    const [isAnimated, setIsAnimated] = useState(false);
     const [contentLeft, setContentLeft] = useState('Home');
     const [contentRight, setContentRight] = useState(Genres[keysRight[idxRight]].default);
     const [isClosedLeft, setIsClosedLeft] = useState(true);
     const [isClosedRight, setIsClosedRight] = useState(true);
     const [showCanvas, setShowCanvas] = useState(false);
     
+    const removeNoAnimateClass = () => {
+        const classPreload = 'preload-prevent-animation';
+        const preloads = document.querySelectorAll(`.${classPreload}`);
+    
+        preloads.forEach((preload) => {
+            preload.classList.remove(classPreload);
+        });
+    };
+
     const provider = {
         player,
         contentLeft,
@@ -31,22 +41,36 @@ const ContextProvider = ({ children }) => {
         changeContentLeft: contentLeft => {
             if (Pages[contentLeft]) {
                 setContentLeft(Pages[contentLeft].default);
-                if (isClosedLeft) {
-                    setIsClosedLeft(false);
-                }   
+                setIsClosedLeft(!isClosedLeft);
+                if (!isAnimated) {
+                    removeNoAnimateClass();
+                    setIsAnimated(true);
+                }
             }
         },
         changeContentRight: contentRight => {
             if (Genres[contentRight]) {
                 setContentRight(Genres[contentRight].default);
-                setIsClosedRight(false);
+                setIsClosedRight(!isClosedRight);
+                if (!isAnimated) {
+                    removeNoAnimateClass();
+                    setIsAnimated(true);
+                }
             }
         },
         changeIsClosedLeft: isClosed => {
             setIsClosedLeft(isClosed);
+            if (!isAnimated) {
+                removeNoAnimateClass();
+                setIsAnimated(true);
+            }
         },
         changeIsClosedRight: isClosed => {
             setIsClosedRight(isClosed);
+            if (!isAnimated) {
+                removeNoAnimateClass();
+                setIsAnimated(true);
+            }
         },
         changeShowCanvas: showCanvas => {
             setShowCanvas(showCanvas);

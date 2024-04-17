@@ -20,12 +20,12 @@
     width: var(--width-panel-right);
 }
 #panel-right.open {
-    animation: slideLeft 1000ms ease forwards;
+    animation: slideLeft 750ms ease forwards;
     width: var(--width-panel-right);
     opacity: 0.9;
 }
 #panel-right.close {
-    animation: slideRight 1000ms ease forwards;
+    animation: slideRight 750ms ease forwards;
     width: 0;
     opacity: 0;
 }
@@ -58,10 +58,10 @@
     height: 0;
 }
 .card-first .card-body.open {
-    animation: grow 1000ms ease forwards;
+    animation: grow 750ms ease forwards;
 }
 .card-first .card-body.close {
-    animation: shrink 1000ms ease forwards;
+    animation: shrink 750ms ease forwards;
 }
 
 .card-second {
@@ -71,10 +71,10 @@
     padding: 0;
 }
 .card-second.open {
-    animation: slideUp 1000ms ease forwards;
+    animation: slideUp 750ms ease forwards;
 }
 .card-second.close {
-    animation: slideDown 1000ms ease forwards;
+    animation: slideDown 750ms ease forwards;
 }
 
 #but-playlist {

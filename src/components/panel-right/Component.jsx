@@ -6,7 +6,7 @@ import {  Button,
 import {  FaRegWindowClose,
           FaChevronLeft, 
           FaChevronRight }  from 'react-icons/fa';
-//import    YouTube           from 'react-youtube';
+import    YouTube           from 'react-youtube';
 
 import    ContentContext    from 'context/content/Context';
 
@@ -120,7 +120,12 @@ const PanelRight = (props) => {
                 );
               })}
             </ListGroup>
-            
+            <YouTube
+              className="text-center"
+              videoId={player.yt}
+              title={`${player.artist} - ${player.song}`}
+              opts={opts}
+            />
           </Card.Body>
         </Card>
     </div>
