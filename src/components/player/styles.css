@@ -13,3 +13,8 @@
 #rhap_current-time,.rhap_time {
     color: var(--color-text);
 }
+
+#out {
+    position: relative;
+    left: 4em;
+}

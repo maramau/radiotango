@@ -6,7 +6,7 @@ import {  Button,
 import {  FaRegWindowClose,
           FaChevronLeft, 
           FaChevronRight }  from 'react-icons/fa';
-import    YouTube           from 'react-youtube';
+//import    YouTube           from 'react-youtube';
 
 import    ContentContext    from 'context/content/Context';
 
@@ -71,10 +71,10 @@ const PanelRight = (props) => {
       className="m-0"
       onClick={() => {changeIsClosedRight(true); togglePanel(); toggleButton();}}
     >
-      {isClosedRight
-      ? <FaChevronLeft/>
-      : <FaChevronRight/>
-      }
+      
+    <FaChevronLeft style={{display: isClosedRight? '' : 'none'}}/>
+    <FaChevronRight style={{display: !isClosedRight? '' : 'none'}}/>
+      
     </Button>
     <div id="panel-right" className={isClosedRight? "close" : "open"}>
         <div className="but-close" onClick={() => {changeIsClosedRight(true); togglePanel(); toggleButton();}}>
@@ -120,12 +120,7 @@ const PanelRight = (props) => {
                 );
               })}
             </ListGroup>
-            <YouTube
-              className="text-center"
-              videoId={player.yt}
-              title={`${player.artist} - ${player.song}`}
-              opts={opts}
-            />
+            
           </Card.Body>
         </Card>
     </div>

@@ -9,9 +9,7 @@ const Player = () => {
 
     return (
         <>
-        <div>
-
-        </div>
+        <audio id="out" controls></audio>
         </>
     );
 };
