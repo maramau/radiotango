@@ -1,9 +1,10 @@
 import { useContext }     from 'react';
 
+import Social             from 'components/social/Component';
+
 import ContentContext     from 'context/content/Context';
 
-import {  FaShareAlt,
-          FaPlusCircle,
+import {  FaPlusCircle,
           FaMinusCircle } from 'react-icons/fa';
 
 import Button             from 'react-bootstrap/Button';
@@ -18,10 +19,8 @@ const BarRight = () => {
     <div className="stack-container right">
         <Stack gap={2} className="col-md-5 mx-auto stack-right" style={{justifyContent: "space-between"}}>
             <div className="stack-section text-center">
-                <Button variant="primary" onClick={() => {changeContentRight('Bebop')}}>
-                  <FaShareAlt/>
-                </Button>
-                <hr/>
+              <Social/>
+              <hr/>
             </div>
             <div className="stack-section text-center">
                 <hr/>

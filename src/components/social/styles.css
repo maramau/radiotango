@@ -1,0 +1,139 @@
+* {
+	box-sizing: border-box;
+}
+
+/* this is what I use to place the menu thing wherever I want*/
+.container-socials {
+	position: relative;
+	top: 4em;
+	right: 0.5em;
+
+    --purple: #462882;
+    --green: #1ef0a0;
+    --blue: #4644fd;
+    --red: #ff3c4b;
+    --circle-size: 2.5em;
+    --top: 2em;
+    --void: 0.25em;
+    --icon-size: 1.25em;
+    --top-toggle: -3em;
+    --right-toggle: 0em;
+}
+
+/* this toggles the whole damn thing */
+.menu-toggle {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background-color: var(--green);
+	box-shadow: 4px 4px 2px 1px rgba(#000, 0.2);
+	
+	position: absolute;
+	z-index: 50;
+	top: var(--top-toggle);
+	right: var(--right-toggle);
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-toggle svg{
+    color:#fff;
+    font-size: 2em;
+    transition: 0.4s;
+}
+
+/* Single Template buttons */
+.btn-app {
+    width: var(--circle-size);
+	height: var(--circle-size);
+	border-radius: 50%;
+	position: absolute;
+	
+	background-color: var(--blue);
+	color:#fff;
+	text-align: center;
+}
+.btn-app svg {
+    line-height: 2.5em;
+}
+
+/* add shadow only when templates are activated */
+.open .btn-app {
+	box-shadow:4px 4px 2px 1px rgba(#000, 0.2);
+}
+
+/* The most-popular apps in a circular thingo */
+.menu-round {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 30;
+}
+
+.menu-round .btn-app {
+    top: calc(var(--top-toggle) * 0.75);
+    right: var(--right-toggle);
+    transition: 0.4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: var(--icon-size);
+}
+
+.menu-round.open .btn-app:nth-of-type(1) {
+    right: 0.5em;
+    top: 1em;
+    transition-delay: 0.2s;
+}
+
+.menu-round.open .btn-app:nth-of-type(2){
+    right: 3.5em;
+    top: 0em;
+    transition-delay: 0.1s;
+}
+.menu-round.open .btn-app:nth-of-type(3){
+    right: 3.75em;
+    top: -3em;
+}
+
+/* stacked template icons */
+.menu-line {
+	position: absolute;
+    top: var(--top-toggle);
+    right: calc(3.5em + var(--right-menu-line));
+	z-index: 20;
+}
+
+.menu-line .btn-app {
+    top: 0;
+    transition: 0.3s;
+    transition-delay: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: var(--icon-size);
+}
+
+.menu-line.open {
+    top: calc(0.75em + var(--top-toggle));
+}
+
+.menu-line.open .btn-app {
+    right: calc(1em + var(--right-toggle));
+}
+
+.menu-line.open .btn-app:nth-of-type(1) {
+    top: calc(var(--top) + 1 * (var(--circle-size) + var(--void)));
+}
+.menu-line.open .btn-app:nth-of-type(2) {
+    top: calc(var(--top) + 2 * (var(--circle-size) + var(--void)));
+}
+.menu-line.open .btn-app:nth-of-type(3) {
+    top: calc(var(--top) + 3 * (var(--circle-size) + var(--void)));
+}
+.menu-line.open .btn-app:nth-of-type(4) {
+    top: calc(var(--top) + 4 * (var(--circle-size) + var(--void)));
+}
