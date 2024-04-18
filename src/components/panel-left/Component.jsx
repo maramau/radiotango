@@ -41,9 +41,9 @@ const PanelLeft = (props) => {
       cardSecond.classList.add('close');
     }
   };
-  // The logic on isClosedLeft is backwards but it works. I'm leaving it for now
+  
   return (
-    <div id="panel-left" className={!isClosedLeft? "close" : "open"}>
+    <div id="panel-left" className={isClosedLeft? "close" : "open"}>
         <div className="but-close" onClick={() => {changeIsClosedLeft(true); togglePanel();}}>
           <FaRegWindowClose/>
         </div>

@@ -38,20 +38,32 @@ const ContextProvider = ({ children }) => {
             setPlayer(song);
             //window.localStorage.setItem('player', JSON.stringify(newPlayer));
         },
-        changeContentLeft: contentLeft => {
-            if (Pages[contentLeft]) {
-                setContentLeft(Pages[contentLeft].default);
-                setIsClosedLeft(!isClosedLeft);
+        changeContentLeft: cl => {
+            if (Pages[cl]) {
+                const newContent = Pages[cl].default;
+                
+                if (contentLeft !== newContent) {
+                    setContentLeft(newContent);
+                }
+                if (isClosedLeft || contentLeft === newContent) {
+                    setIsClosedLeft(!isClosedLeft);
+                }
                 if (!isAnimated) {
                     removeNoAnimateClass();
                     setIsAnimated(true);
                 }
             }
         },
-        changeContentRight: contentRight => {
-            if (Genres[contentRight]) {
-                setContentRight(Genres[contentRight].default);
-                setIsClosedRight(!isClosedRight);
+        changeContentRight: cr => {
+            if (Pages[cr]) {
+                const newContent = Pages[cr].default;
+                
+                if (contentRight !== newContent) {
+                    setContentLeft(newContent);
+                }
+                if (isClosedRight || contentRight === newContent) {
+                    setIsClosedRight(!isClosedRight);
+                }
                 if (!isAnimated) {
                     removeNoAnimateClass();
                     setIsAnimated(true);

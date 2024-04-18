@@ -25,7 +25,6 @@
 #panel-left .but-close{
     font-size: 2em;
     color: var(--color-text);
-    position: absolute;
     top: 0.5em;
     right: 1em;
     width: 1em;
@@ -60,7 +59,7 @@
     overflow-y: scroll;
 }
 
-@keyframes slideRight2 {
+@keyframes slideLeft2 {
     from {
         width: 0;
         opacity: 0;
@@ -71,7 +70,7 @@
         opacity: 0.9;
     }
 }
-@keyframes slideLeft2 {
+@keyframes slideRight2 {
     from {
         width: var(--width-panel-left);
         opacity: 0.9;
