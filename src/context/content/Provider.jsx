@@ -55,11 +55,11 @@ const ContextProvider = ({ children }) => {
             }
         },
         changeContentRight: cr => {
-            if (Pages[cr]) {
-                const newContent = Pages[cr].default;
+            if (Genres[cr]) {
+                const newContent = Genres[cr].default;
                 
                 if (contentRight !== newContent) {
-                    setContentLeft(newContent);
+                    setContentRight(newContent);
                 }
                 if (isClosedRight || contentRight === newContent) {
                     setIsClosedRight(!isClosedRight);
