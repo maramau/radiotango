@@ -28,10 +28,14 @@ const Social = () => {
             
             <div className={`menu-round ${showSocials? 'open' : ''}`}>
                 <div className="btn-app">
-                    <FaXTwitter/>
+                    <a href="https://twitter.com/GriziaMauro" target='_blank'>
+                        <FaXTwitter/>
+                    </a>
                 </div>
                 <div className="btn-app">
-                    <FaFacebook/>
+                    <a href="https://www.facebook.com/profile.php?id=61553601988444" target='_blank'>
+                        <FaFacebook/>
+                    </a>
                 </div>
                 <div className="btn-app">
                     <FaYoutube/>
@@ -46,30 +50,15 @@ const Social = () => {
                     <FaSpotify/>
                 </div>
                 <div className="btn-app">
-                    <FaInstagram/>
+                    <a href="https://www.instagram.com/@griziamauro" target='_blank'>
+                        <FaInstagram/>
+                    </a>
                 </div>
                 <div className="btn-app">
-                    <FaThreads/>
+                    <a href="https://www.threads.net/@maurogrizia" target='_blank'>
+                        <FaThreads/>
+                    </a>
                 </div>
-            </div>
-        </div>
-        </>
-    )
-    return (
-        <>
-        <div id="menu" className={showSocials? 'open' : 'close'}>
-            <FaShareNodes className="toggle" onClick={() => {setShowSocials(showSocials => {return !showSocials;})}}/>
-            <div id="socials">
-                <FaFacebook/>
-                <FaYoutube/>
-
-                <FaInstagram/>
-                <FaSpotify/>
-                
-                <FaSoundcloud/>
-                <FaXTwitter/>
-                
-                <FaThreads/>
             </div>
         </div>
         </>

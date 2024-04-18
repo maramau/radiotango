@@ -12,6 +12,9 @@
 #panel-left {
     width: var(--width-panel-left);
 }
+#panel-left * {
+    z-index: 50;
+}
 #panel-left.open {
     animation: slideLeft2 750ms ease forwards;
     width: var(--width-panel-left);
@@ -30,7 +33,6 @@
     width: 1em;
     text-align: center;
     cursor: pointer;
-    z-index: 100;
 }
 
 .card-body {

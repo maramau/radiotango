@@ -57,6 +57,9 @@
 .btn-app svg {
     line-height: 2.5em;
 }
+.btn-app a {
+    color: #fff;
+}
 
 /* add shadow only when templates are activated */
 .open .btn-app {
@@ -102,27 +105,44 @@
 .menu-line {
 	position: absolute;
     top: var(--top-toggle);
-    right: calc(3.5em + var(--right-menu-line));
 	z-index: 20;
 }
 
 .menu-line .btn-app {
     top: 0;
+    right: -4.25em;
     transition: 0.3s;
     transition-delay: 0.5s;
     display: flex;
     justify-content: center;
     align-items: center;
-
     font-size: var(--icon-size);
 }
 
 .menu-line.open {
     top: calc(0.75em + var(--top-toggle));
+    z-index: 120;
 }
 
 .menu-line.open .btn-app {
-    right: calc(1em + var(--right-toggle));
+    right: calc(-1em + var(--right-toggle));
+}
+
+@media (max-width: 900px) {
+    .menu-line .btn-app {
+        right: -2.25em;
+    }
+    .menu-line.open .btn-app {
+        right: calc(1em + var(--right-toggle));
+    }
+}
+@media (max-width: 767px) {
+    .menu-line .btn-app {
+        right: -2em;
+    }
+    .menu-line.open .btn-app {
+        right: calc(1.25em + var(--right-toggle));
+    }
 }
 
 .menu-line.open .btn-app:nth-of-type(1) {
