@@ -1,6 +1,9 @@
-import { useContext } from 'react';
+import {  useContext,
+          useState,
+          useRef } from 'react';
 
 import {  FaHome, 
+          FaStar,
           FaMusic, 
           FaShoppingCart, 
           FaAtlas, 
@@ -9,13 +12,40 @@ import {  FaHome,
 
 import ContentContext from 'context/content/Context';
 
-import Button         from 'react-bootstrap/Button';
-import Stack          from 'react-bootstrap/Stack';
+import {  Button,
+          Stack }     from 'react-bootstrap';
+
+import Overlay from 'react-bootstrap/Overlay';
+import Tooltip from 'react-bootstrap/Tooltip';
 
 import './styles.css';
 
 const BarLeft = () => {
   const { changeContentLeft } = useContext(ContentContext);
+
+  const [overlay, setOverlay] = useState({});
+  const ref = useRef(null);
+
+  const handleClick = (e) => {
+    const oldOverlay = {
+      ...overlay
+    };
+    const newOverlay = {
+      show: oldOverlay.target !== e.target || !overlay.show,
+      target: e.currentTarget,
+      text: e.currentTarget.dataset.tooltip,
+    };
+
+    setOverlay(newOverlay)
+  };
+
+  const renderTooltip = (props) => 
+  {console.log(props)
+    return (
+    <Tooltip id="button-tooltip" {...props}>
+      {props.text}
+    </Tooltip>
+  )};
 
   return (
     <div className="stack-container">
@@ -31,6 +61,26 @@ const BarLeft = () => {
                   <FaShoppingCart/>
                 </Button>
                 <hr/>
+            </div>
+            <div className="stack-section text-center" ref={ref}>
+              <Button variant="primary" onClick={handleClick} data-tooltip="Week's Star">
+                <FaStar/>
+              </Button>
+              <Button variant="primary" onClick={handleClick} data-tooltip="Atlas">
+                <FaAtlas/>
+              </Button>
+
+              <Overlay
+                placement="right"
+                container={ref}
+                show={overlay.show}
+                target={overlay.target}
+                trigger="hover"
+              >
+                <Tooltip id="button-tooltip">
+                  {overlay.text}
+                </Tooltip>
+              </Overlay>
             </div>
             <div className="stack-section text-center">
                 <hr/>
