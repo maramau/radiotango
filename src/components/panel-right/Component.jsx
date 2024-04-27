@@ -3,12 +3,12 @@ import { useContext }       from 'react';
 import {  Button, 
           Card, 
           ListGroup}        from 'react-bootstrap';
-import {  FaRegWindowClose,
-          FaChevronLeft, 
-          FaChevronRight }  from 'react-icons/fa';
+import {  FaRegWindowClose }from 'react-icons/fa';
 import    YouTube           from 'react-youtube';
 
 import    ContentContext    from 'context/content/Context';
+
+import {  Tooltip }         from 'react-tooltip';
 
 import './styles.css';
 
@@ -16,10 +16,6 @@ const PanelRight = (props) => {
   const { isClosedRight, contentRight, player, changeIsClosedRight, changePlayer } = useContext(ContentContext);
 
   const variant = 'Info';
-  const opts = {
-    height: "240",
-    width: "480"
-  };
 
   const togglePanel = () => {
     const panel = document.querySelector('#panel-right');
@@ -39,10 +35,12 @@ const PanelRight = (props) => {
 
     if (panel.classList.contains('open')) {
       butClose.textContent = '>';
+      butClose.dataset['tooltipContent'] = "Close";
       butClose.classList.remove('close');
       butClose.classList.add('open');
     } else {
       butClose.textContent = '<';
+      butClose.dataset['tooltipContent'] = "Open";
       butClose.classList.remove('open');
       butClose.classList.add('close');
     }
@@ -72,11 +70,16 @@ const PanelRight = (props) => {
     <Button 
       id="but-slide-panel"
       bg="primary"
-      className={`m-0${isClosedRight? '' : ' open'}`}
+      className="m-0"
+      data-tooltip-id="tt-slide-panel"
+      data-tooltip-content="Open"
+      data-tooltip-place="left"
       onClick={() => {changeIsClosedRight(true); togglePanel(); toggleButton();}}
     >
       &lt;
     </Button>
+    <Tooltip id="tt-slide-panel" />
+
     <div id="panel-right" className={isClosedRight? "close" : "open"}>
         <div className="but-close" onClick={() => {changeIsClosedRight(true); togglePanel(); toggleButton();}}>
           <FaRegWindowClose/>

@@ -1,5 +1,5 @@
 import {  useContext,
-          useRef } from 'react';
+          useRef }    from 'react';
 
 import {  FaHome, 
           FaStar,
@@ -14,7 +14,7 @@ import ContentContext from 'context/content/Context';
 import {  Button,
           Stack }     from 'react-bootstrap';
 
-import { Tooltip } from 'react-tooltip';
+import { Tooltip }    from 'react-tooltip';
 
 import './styles.css';
 
