@@ -6,8 +6,9 @@
     position: absolute;
     top: calc(50% - 1em);
     right: 0;
-    width: 1vw;
+    width: 4vw;
     height: 2em;
+    z-index: 200;
 }
 #but-slide-panel.open {
     animation: slideLeftBut 750ms ease forwards;
@@ -196,11 +197,9 @@
         --width-panel-right: 42vw;
     }
     #panel-right {
-        /*right: calc(7vw + 0.5em);*/
         right: 0;
     }
     #but-slide-panel.open {
-        /*right: calc(7vw + 0.5em);*/
         right: var(--width-panel-right);
     }
 }
@@ -209,11 +208,9 @@
         --width-panel-right: 70vw;
     }
     #panel-right {
-        /*right: calc(13vw + 0.5em);*/
         right: 0;
     }
     #but-slide-panel.open {
-        /*right: calc(7vw + 0.5em);*/
         right: var(--width-panel-right);
     }
 }
@@ -222,11 +219,9 @@
         --width-panel-right: 77vw;
     }
     #panel-right {
-        /*right: calc(23vw + 0.5em);*/
-        right: 0;   
+        right: 0;
     }
     #but-slide-panel.open {
-        /*right: calc(7vw + 0.5em);*/
         right: var(--width-panel-right);
     }
 }

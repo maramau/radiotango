@@ -33,6 +33,12 @@
     align-items: center;
 }
 
+.menu-toggle:hover {
+    cursor: pointer;
+    background-color: var(--color-secondary-soft);
+}
+
+
 .menu-toggle svg{
     color:#fff;
     font-size: 2em;
@@ -46,9 +52,12 @@
 	border-radius: 50%;
 	position: absolute;
 	
-	background-color: var(--color-secondary-soft);
+	background-color: var(--color-secondary);
 	color:#fff;
 	text-align: center;
+}
+.btn-app:hover {
+    background-color: var(--color-secondary-soft);
 }
 .btn-app svg {
     line-height: 2.5em;
@@ -107,8 +116,8 @@
 .menu-line .btn-app {
     top: 0;
     right: -4.25em;
-    transition: 0.3s;
-    transition-delay: 0.5s;
+    transition: 0.35s;
+    transition-delay: 0.3s;
     display: flex;
     justify-content: center;
     align-items: center;
