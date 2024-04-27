@@ -7,8 +7,10 @@ import ContentContext     from 'context/content/Context';
 import {  FaPlusCircle,
           FaMinusCircle } from 'react-icons/fa';
 
-import Button             from 'react-bootstrap/Button';
-import Stack              from 'react-bootstrap/Stack';
+import { Button,
+        Stack }           from 'react-bootstrap';
+
+import { Tooltip } from 'react-tooltip';
 
 import './styles.css';
 
@@ -31,7 +33,6 @@ const BarRight = () => {
                   <FaMinusCircle/>
                 </Button>
             </div>
-            
         </Stack>
     </div>
   );

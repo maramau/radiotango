@@ -39,8 +39,12 @@ const PanelRight = (props) => {
 
     if (panel.classList.contains('open')) {
       butClose.textContent = '>';
+      butClose.classList.remove('close');
+      butClose.classList.add('open');
     } else {
       butClose.textContent = '<';
+      butClose.classList.remove('open');
+      butClose.classList.add('close');
     }
   };
 
@@ -68,13 +72,10 @@ const PanelRight = (props) => {
     <Button 
       id="but-slide-panel"
       bg="primary"
-      className="m-0"
+      className={`m-0${isClosedRight? '' : ' open'}`}
       onClick={() => {changeIsClosedRight(true); togglePanel(); toggleButton();}}
     >
-      
-    <FaChevronLeft style={{display: isClosedRight? '' : 'none'}}/>
-    <FaChevronRight style={{display: !isClosedRight? '' : 'none'}}/>
-      
+      &lt;
     </Button>
     <div id="panel-right" className={isClosedRight? "close" : "open"}>
         <div className="but-close" onClick={() => {changeIsClosedRight(true); togglePanel(); toggleButton();}}>
