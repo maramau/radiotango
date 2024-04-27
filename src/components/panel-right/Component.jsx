@@ -15,8 +15,6 @@ import './styles.css';
 const PanelRight = (props) => {
   const { isClosedRight, contentRight, player, changeIsClosedRight, changePlayer } = useContext(ContentContext);
 
-  const variant = 'Info';
-
   const togglePanel = () => {
     const panel = document.querySelector('#panel-right');
     
@@ -86,12 +84,7 @@ const PanelRight = (props) => {
         </div>
         {props.content}
         
-        <Card
-          bg={variant.toLowerCase()}
-          key={variant}
-          text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
-          className="mb-0 card-first"
-        >
+        <Card className="mb-0 card-first">
           <Card.Header>{contentRight.title}</Card.Header>
           <Card.Body className='open'>
               {contentRight.body}
@@ -106,19 +99,14 @@ const PanelRight = (props) => {
           Playlist
         </Button>
 
-        <Card
-          bg={variant.toLowerCase()}
-          key={variant + '2'}
-          text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
-          className="m-0 card-second close"
-        >
+        <Card className="m-0 card-second close">
           <Card.Body>
-            <ListGroup as="ol" numbered variant="primary" className="mb-2">
+            <ListGroup as="ol" numbered className="mb-2" variant="secondary">
               {contentRight.playlist.map((song, idx) => {
                 const label = `${song.artist} - ${song.song}`;
 
                 return (
-                  <ListGroup.Item action variant="primary" key={label} onClick={() => {changePlayer(song)}}>
+                  <ListGroup.Item action variant="secondary" key={label} onClick={() => {changePlayer(song)}}>
                     {label}
                   </ListGroup.Item>
                 );

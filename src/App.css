@@ -7,9 +7,10 @@ html,body {
   --antiflash-white: #F0F4F8ff;
   --antiflash-white-soft: #F0F4F8DD;
   --night: #13130Fff;
-  --night-soft: #13130FDD;
+  --night-soft: #23231FDD;
 
   --color-background: var(--night);
+  --color-background-soft: var(--night-soft);
   --color-text: var(--antiflash-white);
   --color-text-soft: var(--antiflash-white-soft);
   --color-primary: var(--jonquil);
@@ -64,4 +65,15 @@ button.btn-secondary {
   --bs-btn-hover-bg: var(--color-secondary-soft);
   --bs-btn-active-bg: var(--color-secondary-soft);
   --bs-btn-disabled-bg: var(--color-secondary-soft);
+}
+
+.card {
+  --bs-card-border-color: var(--color-background);
+  --bs-card-cap-bg: var(--color-background-soft);
+  --bs-card-bg: var(--color-background-soft);
+  --bs-body-color: var(--color-text);
+}
+
+.welcome-title {
+  color: var(--color-text);
 }

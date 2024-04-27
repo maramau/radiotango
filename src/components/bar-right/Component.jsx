@@ -10,7 +10,7 @@ import {  FaPlusCircle,
 import { Button,
         Stack }           from 'react-bootstrap';
 
-import { Tooltip } from 'react-tooltip';
+import { Tooltip }        from 'react-tooltip';
 
 import './styles.css';
 
@@ -22,7 +22,6 @@ const BarRight = () => {
         <Stack gap={2} className="col-md-5 mx-auto stack-right" style={{justifyContent: "space-between"}}>
             <div className="stack-section text-center">
               <Social/>
-              <hr/>
             </div>
             <div className="stack-section text-center">
                 <hr/>

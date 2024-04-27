@@ -9,7 +9,6 @@ import './styles.css';
 
 const PanelLeft = (props) => {
   const { contentLeft, isClosedLeft, changeIsClosedLeft } = useContext(ContentContext);
-  const variant = 'Danger';
 
   const togglePanel = () => {
     const panel = document.querySelector('#panel-left');
@@ -49,12 +48,7 @@ const PanelLeft = (props) => {
         </div>
         {props.content}
         
-        <Card
-          bg={variant.toLowerCase()}
-          key={variant}
-          text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
-          className="mb-0 card-first"
-        >
+        <Card className="mb-0 card-first">
           <Card.Header>{contentLeft.title}</Card.Header>
           <Card.Body className='open'>
             {contentLeft.body}
@@ -69,12 +63,7 @@ const PanelLeft = (props) => {
           Buton
         </Button>
 
-        <Card
-          bg={variant.toLowerCase()}
-          key={variant + '2'}
-          text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
-          className="m-0 card-second close"
-        >
+        <Card className="m-0 card-second close">
           <Card.Body>
             <Card.Text>
 

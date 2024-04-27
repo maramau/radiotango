@@ -8,10 +8,6 @@
 	top: 4em;
 	right: 0.5em;
 
-    --purple: #462882;
-    --green: #1ef0a0;
-    --blue: #4644fd;
-    --red: #ff3c4b;
     --circle-size: 2.5em;
     --top: 2em;
     --void: 0.25em;
@@ -25,8 +21,8 @@
 	width: 60px;
 	height: 60px;
 	border-radius: 50%;
-	background-color: var(--green);
-	box-shadow: 4px 4px 2px 1px rgba(#000, 0.2);
+	background-color: var(--color-secondary);
+	box-shadow: 4px 4px 2px 1px #00000033;
 	
 	position: absolute;
 	z-index: 50;
@@ -50,7 +46,7 @@
 	border-radius: 50%;
 	position: absolute;
 	
-	background-color: var(--blue);
+	background-color: var(--color-secondary-soft);
 	color:#fff;
 	text-align: center;
 }
@@ -63,7 +59,7 @@
 
 /* add shadow only when templates are activated */
 .open .btn-app {
-	box-shadow:4px 4px 2px 1px rgba(#000, 0.2);
+	box-shadow: 4px 4px 2px 1px #00000033;
 }
 
 /* The most-popular apps in a circular thingo */

@@ -39,13 +39,13 @@ const Component = () => {
         <p>
             The following are a non-complete list of the different jazz genres.
         </p>
-        <ListGroup as="ol" numbered variant="primary">
+        <ListGroup as="ol" numbered variant="secondary">
             {genres.map((genre) => {
                 const label = genre.name;
                 const href = genre.href;
 
                 return (
-                    <ListGroup.Item action variant="primary" key={label} as="li" onClick={handleClick} data-href={href}>
+                    <ListGroup.Item action variant="secondary" key={label} as="li" onClick={handleClick} data-href={href}>
                         {label}
                     </ListGroup.Item>
                 );
@@ -56,13 +56,13 @@ const Component = () => {
         <p>
             Nowadays, besides the traditional classification, we can find plenty of jazz on modern media. Like in the following list:
         </p>
-        <ListGroup as="ol" numbered variant="primary">
+        <ListGroup as="ol" numbered variant="secondary">
             {otherGenres.map((genre) => {
                 const label = genre.name;
                 const href = genre.href;
 
                 return (
-                    <ListGroup.Item action variant="primary" key={label} as="li" onClick={handleClick} data-href={href}>
+                    <ListGroup.Item action variant="secondary" key={label} as="li" onClick={handleClick} data-href={href}>
                         {label}
                     </ListGroup.Item>
                 );
