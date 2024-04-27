@@ -1,4 +1,24 @@
 html,body {
+  --dark-cyan: #2D9894ff;
+  --tangelo: #FD4B09ff;
+  --tangelo-soft: #FD4B09DD;
+  --jonquil: #F9CF20ff;
+  --jonquil-soft: #F9CF20DD;
+  --antiflash-white: #F0F4F8ff;
+  --antiflash-white-soft: #F0F4F8DD;
+  --night: #13130Fff;
+  --night-soft: #13130FDD;
+
+  --color-background: var(--night);
+  --color-text: var(--antiflash-white);
+  --color-text-soft: var(--antiflash-white-soft);
+  --color-primary: var(--jonquil);
+  --color-primary-soft: var(--jonquil-soft);
+  --color-secondary: var(--tangelo);
+  --color-secondary-soft: var(--tangelo-soft);
+}
+
+html,body {
   width: 100vw;
   background-color: black;
 
@@ -9,6 +29,9 @@ html,body {
   hyphens: auto;
   /*Support for old browsers*/
   word-wrap: break-word;
+
+  background-color: var(--color-background);
+  color: var(--color-text);  
 }
 
 /* Avoid animations on panels when loading*/
@@ -17,3 +40,28 @@ html,body {
   -webkit-animation-duration: 0s !important;
   transition: background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
 } 
+
+/* Boostrap style patch */
+button.btn {
+  --bs-btn-color: var(--color-text);
+  --bs-btn-hover-color: var(--color-text);
+  --bs-btn-active-color: var(--color-text);
+
+  --bs-btn-border-color: var(--color-background);
+  --bs-btn-hover-border-color: var(--color-background);
+  --bs-btn-active-border-color: var(--color-background);
+  
+  border: none;
+}
+button.btn-primary {
+  --bs-btn-bg: var(--color-primary);
+  --bs-btn-hover-bg: var(--color-primary-soft);
+  --bs-btn-active-bg: var(--color-primary-soft);
+  --bs-btn-disabled-bg: var(--color-primary-soft);
+}
+button.btn-secondary {
+  --bs-btn-bg: var(--color-secondary);
+  --bs-btn-hover-bg: var(--color-secondary-soft);
+  --bs-btn-active-bg: var(--color-secondary-soft);
+  --bs-btn-disabled-bg: var(--color-secondary-soft);
+}
