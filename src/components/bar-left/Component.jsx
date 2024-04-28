@@ -67,7 +67,7 @@ const BarLeft = () => {
                 data-tooltip-id="tt-star"
                 data-tooltip-content="Week's artist"
                 data-tooltip-place="right"
-                onClick={() => {changeContentLeft('Week');}}
+                onClick={() => {changeContentLeft('Star');}}
               >
                 <FaStar/>
               </Button>

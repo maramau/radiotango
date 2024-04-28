@@ -21,6 +21,8 @@ html,body {
 
 html,body {
   width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
   background-color: black;
 
   /*Word breaking*/
