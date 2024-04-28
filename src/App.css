@@ -7,7 +7,7 @@ html,body {
   --antiflash-white: #F0F4F8ff;
   --antiflash-white-soft: #F0F4F8DD;
   --night: #13130Fff;
-  --night-soft: #23231FDD;
+  --night-soft: #23231FFF;
 
   --color-background: var(--night);
   --color-background-soft: var(--night-soft);

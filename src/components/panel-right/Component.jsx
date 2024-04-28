@@ -65,17 +65,30 @@ const PanelRight = (props) => {
 
   return (
     <>
-    <Button 
-      id="but-slide-panel"
-      bg="primary"
-      className="m-0"
-      data-tooltip-id="tt-slide-panel"
-      data-tooltip-content="Open"
-      data-tooltip-place="left"
-      onClick={() => {changeIsClosedRight(true); togglePanel(); toggleButton();}}
-    >
-      &lt;
-    </Button>
+    {isClosedRight
+      ? <Button 
+          id="but-slide-panel"
+          bg="primary"
+          className="m-0 close"
+          data-tooltip-id="tt-slide-panel"
+          data-tooltip-content="Open"
+          data-tooltip-place="left"
+          onClick={() => {changeIsClosedRight(true); togglePanel(); toggleButton();}}
+        >
+          &lt;
+        </Button>
+      : <Button 
+          id="but-slide-panel"
+          bg="primary"
+          className="m-0 open"
+          data-tooltip-id="tt-slide-panel"
+          data-tooltip-content="Close"
+          data-tooltip-place="left"
+          onClick={() => {changeIsClosedRight(true); togglePanel(); toggleButton();}}
+        >
+          &gt;
+        </Button>
+    }
     <Tooltip id="tt-slide-panel" />
 
     <div id="panel-right" className={isClosedRight? "close" : "open"}>

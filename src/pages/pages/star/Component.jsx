@@ -1,18 +1,28 @@
+import { FaWikipediaW } from 'react-icons/fa';
+
 import './styles.css';
 
 const Component = () => {
     return (
         <>
-        <h1>Star</h1>
+        <h2>Piazolla</h2>
         <p>
-            This is some text
+            Astor Pantaleón Piazolla fue un músico re copado mal.
         </p>
+        <p>
+            Sus obras revolucionaron el tango tradicional en un nuevo estilo denominado tango de vanguardia o nuevo tango, incorporando elementos de la música académica, el jazz y el rock. 
+        </p>
+        <div>
+            <a href="https://es.wikipedia.org/wiki/Astor_Piazzolla" target='_blank'>
+                <FaWikipediaW/>
+            </a>
+        </div>
         </>
     );
 };
 
 const data = {
-    title: 'Star',
+    title: 'Artist of the week',
     body: <Component/>,
 }
 

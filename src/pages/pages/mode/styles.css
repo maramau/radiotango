@@ -1,11 +1,3 @@
-/* Safari */
-:-webkit-full-screen {
-}
-  
-/* IE11 */
-:-ms-fullscreen {
-}
-  
 /* Standard syntax */
 :fullscreen {
 }
