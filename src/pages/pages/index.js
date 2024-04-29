@@ -4,6 +4,5 @@ import * as Genres      from 'pages/pages/genres/Component';
 import * as Info        from 'pages/pages/info/Component';
 import * as Mode        from 'pages/pages/mode/Component';
 import * as Shop        from 'pages/pages/shop/Component';
-import * as Star        from 'pages/pages/star/Component';
 
-export {Atlas, Home, Genres, Info, Mode, Shop, Star};
+export {Atlas, Home, Genres, Info, Mode, Shop};

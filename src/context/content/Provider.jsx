@@ -2,11 +2,17 @@ import React, { useState }  from "react";
 
 import ContentContext       from "./Context";
 import * as Genres          from "pages/genres/index";
+import * as Artists         from "pages/artists/index";
 import * as Pages           from "pages/pages/index";
 
-const ContextProvider = ({ children }) => {  
+const ContextProvider = ({ children }) => {
+    const weeksArtist = 'Piazolla';
+    const defaultArtist = Artists[weeksArtist].default;
+    const defaultPlaylist = defaultArtist.playlist;
+    const defaultSong = defaultPlaylist[0];
+
     const strDefaultPlayer = window.localStorage.getItem('player');
-    const defaultPlayer = strDefaultPlayer? JSON.parse(strDefaultPlayer) : {idxAlbum: 0, idxSong: 0};
+    const defaultPlayer = strDefaultPlayer? JSON.parse(strDefaultPlayer) : defaultSong;
     const [player, setPlayer] = useState(defaultPlayer);
     
     const idxRight = 0;
@@ -55,10 +61,15 @@ const ContextProvider = ({ children }) => {
             }
         },
         changeContentRight: cr => {
-            if (Genres[cr]) {
-                const newContent = Genres[cr].default;
+            const content = Genres[cr] || Artists[cr] || cr === 'Star' && Artists[weeksArtist];
+
+            if (content) {
+                const newContent = content.default;
                 
                 if (contentRight !== newContent) {
+                    if (cr === 'Star') {
+                        newContent.title = 'Artist of the week'
+                    }
                     setContentRight(newContent);
                 }
                 if (isClosedRight || contentRight === newContent) {

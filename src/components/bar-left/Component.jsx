@@ -19,7 +19,7 @@ import { Tooltip }    from 'react-tooltip';
 import './styles.css';
 
 const BarLeft = () => {
-  const { changeContentLeft } = useContext(ContentContext);
+  const { changeContentLeft, changeContentRight } = useContext(ContentContext);
 
   const ref = useRef(null);
 
@@ -67,7 +67,7 @@ const BarLeft = () => {
                 data-tooltip-id="tt-star"
                 data-tooltip-content="Week's artist"
                 data-tooltip-place="right"
-                onClick={() => {changeContentLeft('Star');}}
+                onClick={() => {changeContentRight('Star');}}
               >
                 <FaStar/>
               </Button>

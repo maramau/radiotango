@@ -62,7 +62,7 @@ const PanelRight = (props) => {
       cardSecond.classList.add('close');
     }
   };
-
+console.log(player)
   return (
     <>
     {isClosedRight
@@ -130,7 +130,12 @@ const PanelRight = (props) => {
               })}
             </ListGroup>
             
-
+            <YouTube
+              className="text-center"
+              videoId={player.yt}
+              title={`${player.artist} - ${player.song}`}
+              //opts={opts}
+            />
           </Card.Body>
         </Card>
     </div>
@@ -138,12 +143,5 @@ const PanelRight = (props) => {
     
   );
 }
-
-/*<YouTube
-              className="text-center"
-              videoId={player.yt}
-              title={`${player.artist} - ${player.song}`}
-              opts={opts}
-            />*/
 
 export default PanelRight;
