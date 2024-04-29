@@ -49,7 +49,11 @@ const PanelLeft = (props) => {
         {props.content}
         
         <Card className="mb-0 card-first">
-          <Card.Header>{contentLeft.title}</Card.Header>
+          <Card.Header>
+            <h1>
+              {contentLeft.title}
+            </h1>
+          </Card.Header>
           <Card.Body className='open'>
             {contentLeft.body}
           </Card.Body>

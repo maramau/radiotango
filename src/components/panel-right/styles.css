@@ -86,10 +86,10 @@
     padding: 0;
 }
 .card-second.open {
-    animation: slideUp 750ms ease forwards;
+    animation: grow 750ms ease forwards;
 }
 .card-second.close {
-    animation: slideDown 750ms ease forwards;
+    animation: shrink 750ms ease forwards;
 }
 
 #but-playlist {

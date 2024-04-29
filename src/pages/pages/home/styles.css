@@ -9,13 +9,12 @@ body {
     padding: 50px;
   }
   .welcome-title {
-    font-size: 3em;
+    font-size: 1.75em;
     font-weight: bold;
     margin-bottom: 15px;
-    color: #333;
   }
   .welcome-text {
-    font-size: 1.2em;
+    font-size: 1em;
     line-height: 1.5;
     margin-bottom: 20px;
   }

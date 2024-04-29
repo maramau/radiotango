@@ -98,7 +98,11 @@ const PanelRight = (props) => {
         {props.content}
         
         <Card className="mb-0 card-first">
-          <Card.Header>{contentRight.title}</Card.Header>
+          <Card.Header>
+            <h1>
+              {contentRight.title}
+            </h1>
+          </Card.Header>
           <Card.Body className='open'>
               {contentRight.body}
           </Card.Body>

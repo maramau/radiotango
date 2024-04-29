@@ -1,3 +1,5 @@
 /* Standard syntax */
-:fullscreen {
+.card-second:fullscreen {
+    bottom: 0;
+    background-color: pink;
 }
