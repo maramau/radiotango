@@ -62,7 +62,7 @@ const PanelRight = (props) => {
       cardSecond.classList.add('close');
     }
   };
-console.log(player)
+  
   return (
     <>
     {isClosedRight

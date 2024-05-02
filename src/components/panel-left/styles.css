@@ -25,7 +25,7 @@
     width: 0;
     opacity: 0;
 }
-#panel-left .but-close{
+#panel-left.open .but-close{
     font-size: 2em;
     color: var(--color-text);
     /*top: 0.5em;*/
