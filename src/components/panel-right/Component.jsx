@@ -1,9 +1,12 @@
-import { useContext }       from 'react';
+import {  useContext,
+          useState }        from 'react';
 
 import {  Button, 
           Card, 
           ListGroup}        from 'react-bootstrap';
-import {  FaRegWindowClose }from 'react-icons/fa';
+import {  FaRegWindowClose,
+          FaCaretUp,
+          FaCaretDown}      from 'react-icons/fa';
 import    YouTube           from 'react-youtube';
 
 import    ContentContext    from 'context/content/Context';
@@ -14,6 +17,7 @@ import './styles.css';
 
 const PanelRight = (props) => {
   const { isClosedRight, contentRight, player, changeIsClosedRight, changePlayer } = useContext(ContentContext);
+  const [isClosedUp, setIsClosedUp] = useState(true);
 
   const togglePanel = () => {
     const panel = document.querySelector('#panel-right');
@@ -54,12 +58,14 @@ const PanelRight = (props) => {
 
       cardSecond.classList.remove('close');
       cardSecond.classList.add('open');
+      setIsClosedUp(false);
     } else {
       cardFirst.classList.remove('close');
       cardFirst.classList.add('open');
 
       cardSecond.classList.remove('open');
       cardSecond.classList.add('close');
+      setIsClosedUp(true);
     }
   };
   
@@ -113,6 +119,9 @@ const PanelRight = (props) => {
           className='m-0'
           onClick={toggleCard}
         >
+          {isClosedUp
+            ? <FaCaretUp/>
+            : <FaCaretDown/>}
           Playlist
         </Button>
 

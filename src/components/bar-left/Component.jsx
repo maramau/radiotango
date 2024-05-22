@@ -63,6 +63,7 @@ const BarLeft = () => {
             </div>
             <div className="stack-section text-center" ref={ref}>
               <Button 
+                className="btn-star"
                 variant="primary"
                 data-tooltip-id="tt-star"
                 data-tooltip-content="Week's artist"

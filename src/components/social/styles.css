@@ -114,8 +114,8 @@
 }
 
 .menu-line .btn-app {
-    top: 0;
-    right: -4.25em;
+    top: 0.5em;
+    right: -4.75em;
     transition: 0.35s;
     transition-delay: 0.3s;
     display: flex;
@@ -131,11 +131,24 @@
 
 .menu-line.open .btn-app {
     right: calc(-1em + var(--right-toggle));
+    display: block;
 }
 
+@media (max-width: 1250px) {
+    .menu-line .btn-app {
+        right: -3.25em;
+        pointer-events: none;
+        display: none;
+    }
+    .menu-line.open .btn-app {
+        right: calc(1em + var(--right-toggle));
+    }
+}
 @media (max-width: 900px) {
     .menu-line .btn-app {
-        right: -2.25em;
+        right: -3em;
+        pointer-events: none;
+        display: none;
     }
     .menu-line.open .btn-app {
         right: calc(1em + var(--right-toggle));
@@ -144,6 +157,8 @@
 @media (max-width: 767px) {
     .menu-line .btn-app {
         right: -2em;
+        pointer-events: none;
+        display: none;
     }
     .menu-line.open .btn-app {
         right: calc(1.25em + var(--right-toggle));

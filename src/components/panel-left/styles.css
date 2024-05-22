@@ -49,23 +49,34 @@
     overflow-y: scroll;
 }
 
-.card-first {
+#panel-left .card-first {
     box-sizing: border-box;
+    height: 100vh;
+}
+#panel-left .card-header h1 {
+    color: var(--color-secondary);
+    text-transform: uppercase;
+}
+#panel-left .card-body h1, #panel-left .card-body h2{
+    color: var(--color-primary);
+}
+#panel-left .card-body h4, #panel-left .card-body h5, #panel-left .card-body h6{
+    color: var(--color-primary-soft);
 }
 .card-first .card-header {
     height: 15vh;
 }
 .card-first .card-body {
-    height: 70vh;
+    height: 85vh;
 }
 .card-first .card-body.close {
     height: 0;
 }
 
-#but-genres {
+/*#but-genres {
     height: 15%;
     width: 100%;
-}
+}*/
 
 .card-body {
     overflow-y: scroll;

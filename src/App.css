@@ -1,11 +1,11 @@
 html,body {
   --dark-cyan: #2D9894ff;
   --tangelo: #FD4B09ff;
-  --tangelo-soft: #FD4B09DD;
+  --tangelo-soft: #EC3A05FF;
   --jonquil: #F9CF20ff;
   --jonquil-soft: #E8BE10FF;
   --antiflash-white: #F0F4F8ff;
-  --antiflash-white-soft: #F0F4F8DD;
+  --antiflash-white-soft: #F0F4F8FF;
   --night: #13130Fff;
   --night-soft: #23231FFF;
 
@@ -24,6 +24,10 @@ html,body {
   height: 100vh;
   overflow-y: hidden;
   background-color: black;
+  background-image: url('assets/img/radio-tango.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 
   /*Word breaking*/
   -webkit-hyphens: auto;
@@ -35,6 +39,14 @@ html,body {
 
   background-color: var(--color-background);
   color: var(--color-text);  
+}
+
+html.bg-hide, body.bg-hide {
+  background-blend-mode: overlay;
+}
+
+h2,h3,h4,h5,h6 {
+  font-weight: 600;
 }
 
 /* Avoid animations on panels when loading*/

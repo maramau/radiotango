@@ -33,6 +33,17 @@ const ContextProvider = ({ children }) => {
         });
     };
 
+    // Darken Background image when opening panels for readability
+    const changeBackground = () => {
+        const body = document.querySelector('body');
+
+        if (isClosedLeft && isClosedRight) {
+            body.classList.remove('bg-hide');
+        } else {
+            body.classList.add('bg-hide');
+        }
+    };
+
     const provider = {
         player,
         contentLeft,
@@ -68,7 +79,7 @@ const ContextProvider = ({ children }) => {
                 
                 if (contentRight !== newContent) {
                     if (cr === 'Star') {
-                        newContent.title = 'Artist of the week'
+                        newContent.title = 'Artista de la semana'
                     }
                     setContentRight(newContent);
                 }

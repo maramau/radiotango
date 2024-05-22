@@ -58,8 +58,12 @@ const PanelLeft = (props) => {
             {contentLeft.body}
           </Card.Body>
         </Card>
+    </div>
+  );
+}
 
-        <Button 
+/*
+ <Button 
           id="but-genres"
           className='m-0'
           onClick={toggleCard}
@@ -74,8 +78,6 @@ const PanelLeft = (props) => {
             </Card.Text>
           </Card.Body>
         </Card>
-    </div>
-  );
-}
+*/
 
 export default PanelLeft;
