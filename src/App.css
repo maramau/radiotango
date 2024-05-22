@@ -57,6 +57,10 @@ h2,h3,h4,h5,h6 {
 } 
 
 /* Boostrap style patch */
+.card input, .card input:focus{
+  color: #222222CC;
+  width: 100%
+}
 button.btn {
   --bs-btn-color: var(--color-text);
   --bs-btn-hover-color: var(--color-text);

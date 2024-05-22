@@ -4,6 +4,7 @@ import {  useContext,
 import {  FaHome, 
           FaStar,
           FaMusic, 
+          FaMicrophone,
           FaShoppingCart, 
           FaAtlas, 
           FaExchangeAlt, 
@@ -51,14 +52,14 @@ const BarLeft = () => {
 
                 <Button 
                   variant="secondary"
-                  data-tooltip-id="tt-shop"
-                  data-tooltip-content="Shop"
+                  data-tooltip-id="tt-artist"
+                  data-tooltip-content="Artists"
                   data-tooltip-place="right"
-                  onClick={() => {changeContentLeft('Shop');}}
+                  onClick={() => {changeContentLeft('Artists');}}
                 >
-                  <FaShoppingCart/>
+                  <FaMicrophone/>
                 </Button>
-                <Tooltip id="tt-shop" />
+                <Tooltip id="tt-artist" />
                 <hr/>
             </div>
             <div className="stack-section text-center" ref={ref}>

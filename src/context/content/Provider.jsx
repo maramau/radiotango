@@ -92,7 +92,7 @@ const ContextProvider = ({ children }) => {
             const content = Genres[cr] || Artists[cr] || (cr === 'Star' && Artists[weeksArtist]);
 
             if (content) {
-                const newContent = content.default;
+                const newContent = {...content.default};
                 
                 if (contentRight !== newContent) {
                     if (cr === 'Star') {
