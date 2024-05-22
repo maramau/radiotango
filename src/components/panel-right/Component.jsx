@@ -79,7 +79,7 @@ const PanelRight = (props) => {
           data-tooltip-id="tt-slide-panel"
           data-tooltip-content="Open"
           data-tooltip-place="left"
-          onClick={() => {changeIsClosedRight(true); togglePanel(); toggleButton();}}
+          onClick={() => {changeIsClosedRight(false); togglePanel(); toggleButton();}}
         >
           &lt;
         </Button>

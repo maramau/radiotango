@@ -34,14 +34,31 @@ const ContextProvider = ({ children }) => {
     };
 
     // Darken Background image when opening panels for readability
-    const changeBackground = () => {
+    const changeBackground = (isCL, isCR) => {
         const body = document.querySelector('body');
 
-        if (isClosedLeft && isClosedRight) {
+        if (isCL && isCR) {
             body.classList.remove('bg-hide');
         } else {
             body.classList.add('bg-hide');
         }
+    };
+
+    const changeIsClosedLeft = isClosed => {
+        setIsClosedLeft(isClosed);
+        if (!isAnimated) {
+            removeNoAnimateClass();
+            setIsAnimated(true);
+        }
+        changeBackground(isClosed, isClosedRight);
+    };
+    const changeIsClosedRight = isClosed => {
+        setIsClosedRight(isClosed);
+        if (!isAnimated) {
+            removeNoAnimateClass();
+            setIsAnimated(true);
+        }
+        changeBackground(isClosedLeft, isClosed);
     };
 
     const provider = {
@@ -63,7 +80,7 @@ const ContextProvider = ({ children }) => {
                     setContentLeft(newContent);
                 }
                 if (isClosedLeft || contentLeft === newContent) {
-                    setIsClosedLeft(!isClosedLeft);
+                    changeIsClosedLeft(!isClosedLeft);
                 }
                 if (!isAnimated) {
                     removeNoAnimateClass();
@@ -72,7 +89,7 @@ const ContextProvider = ({ children }) => {
             }
         },
         changeContentRight: cr => {
-            const content = Genres[cr] || Artists[cr] || cr === 'Star' && Artists[weeksArtist];
+            const content = Genres[cr] || Artists[cr] || (cr === 'Star' && Artists[weeksArtist]);
 
             if (content) {
                 const newContent = content.default;
@@ -84,7 +101,7 @@ const ContextProvider = ({ children }) => {
                     setContentRight(newContent);
                 }
                 if (isClosedRight || contentRight === newContent) {
-                    setIsClosedRight(!isClosedRight);
+                    changeIsClosedRight(!isClosedRight);
                 }
                 if (!isAnimated) {
                     removeNoAnimateClass();
@@ -92,20 +109,8 @@ const ContextProvider = ({ children }) => {
                 }
             }
         },
-        changeIsClosedLeft: isClosed => {
-            setIsClosedLeft(isClosed);
-            if (!isAnimated) {
-                removeNoAnimateClass();
-                setIsAnimated(true);
-            }
-        },
-        changeIsClosedRight: isClosed => {
-            setIsClosedRight(isClosed);
-            if (!isAnimated) {
-                removeNoAnimateClass();
-                setIsAnimated(true);
-            }
-        },
+        changeIsClosedLeft,
+        changeIsClosedRight,
         changeShowCanvas: showCanvas => {
             setShowCanvas(showCanvas);
         }
