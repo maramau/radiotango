@@ -21,7 +21,7 @@ const body = <>
     <p>
         La orquesta Sciammarella Tango está dirigida creativamente por la propia Denise Sciammarella, quien también contribuye con su voz. La dirección musical está a cargo de Cindy Harcha, quien también toca el bandoneón y hace los arreglos. La orquesta también incluye a Hanel Yeon y Shino Ohnaga en el piano, Mariana Atamás y Cecilia Florencia García en el violín, y Geraldina Carnicina en el contrabajo
     </p>
-    <div>
+    <div className="social-container">
         <a href="https://www.youtube.com/@SciammarellaTango" target='_blank'>
             <FaYoutube/>
         </a>

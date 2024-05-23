@@ -107,6 +107,16 @@
     animation: shrink 750ms ease forwards;
 }
 
+.card-first .card-body.open .social-container {
+    font-size: 2em;
+    text-align: center;
+}
+
+.card-first .card-body.open .social-container a{
+    margin-left: 0.5em;;
+    color: var(--color-secondary);
+}
+
 .card-second {
     position: relative!important;
     opacity: 0;
