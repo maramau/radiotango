@@ -31,7 +31,6 @@ const Component = () => {
     //const classicArtists = artists.filter((x) => {return x.genre === 'classic'});
     const filtered = search === ''? artists : artists.filter((x) => {return x.name.toLowerCase().includes(search)});
     const ordered = filtered.sort((a,b) => {return a.name > b.name;});
-    console.log(ordered)
 
     const handleClick = (event) => {
         const target = event.currentTarget;
@@ -64,7 +63,6 @@ const Component = () => {
                 );
             })}
         </ListGroup>
-        <hr/>
         </>
     );
 };

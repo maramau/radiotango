@@ -1,6 +1,7 @@
 import React, { useState }  from "react";
 
 import ContentContext       from "./Context";
+import * as Posts           from "pages/posts/index";
 import * as Genres          from "pages/genres/index";
 import * as Artists         from "pages/artists/index";
 import * as Pages           from "pages/pages/index";
@@ -73,13 +74,15 @@ const ContextProvider = ({ children }) => {
             //window.localStorage.setItem('player', JSON.stringify(newPlayer));
         },
         changeContentLeft: cl => {
-            if (Pages[cl]) {
-                const newContent = Pages[cl].default;
+            const content = Pages[cl];
+
+            if (content) {
+                const newContent = {...Pages[cl].default};
                 
-                if (contentLeft !== newContent) {
+                if (contentLeft.title !== newContent.title) {
                     setContentLeft(newContent);
                 }
-                if (isClosedLeft || contentLeft === newContent) {
+                if (isClosedLeft || contentLeft.title === newContent.title) {
                     changeIsClosedLeft(!isClosedLeft);
                 }
                 if (!isAnimated) {
@@ -89,18 +92,18 @@ const ContextProvider = ({ children }) => {
             }
         },
         changeContentRight: cr => {
-            const content = Genres[cr] || Artists[cr] || (cr === 'Star' && Artists[weeksArtist]);
+            const content = Posts[cr] || Genres[cr] || Artists[cr] || (cr === 'Star' && Artists[weeksArtist]);
 
             if (content) {
                 const newContent = {...content.default};
                 
-                if (contentRight !== newContent) {
+                if (contentRight.title !== newContent.title) {
                     if (cr === 'Star') {
                         newContent.title = 'Artista de la semana'
                     }
                     setContentRight(newContent);
                 }
-                if (isClosedRight || contentRight === newContent) {
+                if (isClosedRight || contentRight.title === newContent.title) {
                     changeIsClosedRight(!isClosedRight);
                 }
                 if (!isAnimated) {

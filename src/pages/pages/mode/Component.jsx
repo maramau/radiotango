@@ -44,9 +44,9 @@ const Component = () => {
         ref.current.checked = !checkedFull;
         setCheckedFull(checkedFull => !checkedFull);
     };
-    const toggleAnimation = () => {
+    /*const toggleAnimation = () => {
         changeShowCanvas(!showCanvas);
-    };
+    };*/
 
 
     useEffect( () => {
@@ -64,7 +64,13 @@ const Component = () => {
         return () => {document.removeEventListener('keyup', f)};
     }, []);
     
-   
+   /*
+   <Form.Check
+        type="switch"
+        label="Background animation"
+        onChange={toggleAnimation}
+    />
+    */
 
     return (
         <>
@@ -72,21 +78,17 @@ const Component = () => {
             <Form.Check
                 ref={ref}
                 type="switch"
-                label="Fullscreen"
+                label="Pantalla completa"
                 onChange={toggleFullscreen}
             />
-            <Form.Check
-                type="switch"
-                label="Background animation"
-                onChange={toggleAnimation}
-            />
+            
         </Form>
         </>
     );
 };
 
 const data = {
-    title: 'Mode',
+    title: 'Modo',
     body: <Component/>
 };
 

@@ -8,7 +8,7 @@ const Component = () => {
         <h2>¡Bienvenido al apasionante mundo del tango!</h2>
         <br/>
         <h5>
-            Siente el ritmo, explora la historia y descubre la magia del tango
+            Siente el ritmo, explora la historia y descubre la magia
         </h5>
         <p>
             En este espacio virtual te invitamos a sumergirte en el universo del tango, un baile y una música que han cautivado al mundo entero con su pasión, elegancia y profunda expresión.
@@ -36,7 +36,7 @@ const Component = () => {
         </p>
 
         <h5>
-            Prepárate para ser cautivado por el tango
+            Prepárate para ser cautivado
         </h5>
         <p>
             Deja que el ritmo te envuelva, siente la emoción en cada paso y descubre la magia que ha hecho del tango un ícono cultural a nivel mundial.

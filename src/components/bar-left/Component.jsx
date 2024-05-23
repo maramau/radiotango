@@ -5,8 +5,9 @@ import {  FaHome,
           FaStar,
           FaMusic, 
           FaMicrophone,
-          FaShoppingCart, 
-          FaAtlas, 
+//          FaShoppingCart,
+          FaBlog,
+//          FaAtlas, 
           FaExchangeAlt, 
           FaInfo }    from "react-icons/fa";
 
@@ -23,6 +24,20 @@ const BarLeft = () => {
   const { changeContentLeft, changeContentRight } = useContext(ContentContext);
 
   const ref = useRef(null);
+
+  // Atlas
+  // IDEA: Cuando se hace hover en algún post a estos términos que salten cartelitos con la descripción
+  // Por ahí el atlas es innecesario
+  /*<Button 
+    variant="secondary"
+    data-tooltip-id="tt-atlas"
+    data-tooltip-content="Atlas"
+    data-tooltip-place="right"
+    onClick={() => {changeContentLeft('Atlas');}}
+  >
+    <FaAtlas/>
+  </Button>
+  <Tooltip id="tt-atlas" />*/
 
   return (
     <div className="stack-container">
@@ -60,6 +75,17 @@ const BarLeft = () => {
                   <FaMicrophone/>
                 </Button>
                 <Tooltip id="tt-artist" />
+
+                <Button 
+                  variant="secondary"
+                  data-tooltip-id="tt-blog"
+                  data-tooltip-content="Blog"
+                  data-tooltip-place="right"
+                  onClick={() => {changeContentLeft('Blog');}}
+                >
+                  <FaBlog/>
+                </Button>
+                <Tooltip id="tt-blog" />
                 <hr/>
             </div>
             <div className="stack-section text-center" ref={ref}>
@@ -77,16 +103,7 @@ const BarLeft = () => {
             </div>
             <div className="stack-section text-center">
                 <hr/>
-                <Button 
-                  variant="secondary"
-                  data-tooltip-id="tt-atlas"
-                  data-tooltip-content="Atlas"
-                  data-tooltip-place="right"
-                  onClick={() => {changeContentLeft('Atlas');}}
-                >
-                  <FaAtlas/>
-                </Button>
-                <Tooltip id="tt-atlas" />
+
                 
                 <Button
                   variant="secondary"
