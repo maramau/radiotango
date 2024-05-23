@@ -84,18 +84,21 @@ const body = <>
     </p>
     <p>
         La inmigración hizo que la población de Buenos Aires pasara de un 9% de extranjeros en 1857 al 37% en 1869 y a más del 50% en 1887. Sobre un total de 33.804 casas, existían 2.835 conventillos. Estos eran antiguos caserones coloniales en los que se alojaba el 28% de la población. 
-        <figure>
-            <img src="https://billiken.lat/wp-content/uploads/2022/07/SITIO82549299_3722266501131872_7932599279095382016_n-1536x1152.jpg" alt="Conventillo, blanco y negro, foto vieja"/>
-            <figcaption>Figura 1 - Conventillo bonaerense</figcaption>
-        </figure>
-        
-        <br/>
-        En esas casas multifamiliares, mencionadas en múltiples tangos, convivieron con ex-esclavos negros y con los compadres, generalmente ex-soldados y gauchos pobres llegados a la ciudad en busca de trabajo.
-        <figure>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Buenos_Aires-La_Boca-P2070003.JPG" alt="Conventillo en el barrio La Boca, a color, hoy"/>
-            <figcaption>Figura 2 - Conventillo en el barrio La Boca</figcaption>
-        </figure>
     </p>
+    <figure>
+        <img src="https://billiken.lat/wp-content/uploads/2022/07/SITIO82549299_3722266501131872_7932599279095382016_n-1536x1152.jpg" alt="Conventillo, blanco y negro, foto vieja"/>
+        <figcaption>Figura 1 - Conventillo bonaerense</figcaption>
+    </figure>
+    <br/>
+    <p>
+        En esas casas multifamiliares, mencionadas en múltiples tangos, convivieron con ex-esclavos negros y con los compadres, generalmente ex-soldados y gauchos pobres llegados a la ciudad en busca de trabajo.
+    </p>
+
+    <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Buenos_Aires-La_Boca-P2070003.JPG" alt="Conventillo en el barrio La Boca, a color, hoy"/>
+        <figcaption>Figura 2 - Conventillo en el barrio La Boca</figcaption>
+    </figure>
+
     <p>
         Algo digno de señalar es la política librecambista de los terratenientes argentinos de la época. Los terratenientes controlaban en gran parte la política, y a veces la composición, de los gobiernos argentinos. 
         <br/>
@@ -137,6 +140,7 @@ const body = <>
 </>;
 
 const data = {
+    time: 7,
     title: 'Orígenes',
     body,
     playlist: [

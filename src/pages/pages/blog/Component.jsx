@@ -7,12 +7,13 @@ import './styles.css';
 
 const Component = () => {
     const { changeContentRight, changeIsClosedRight } = useContext(ContentContext);
-    const GMT = 'GMT-0300';
+    //const GMT = 'GMT-0300';
     const posts = [
         {
-            name: '2024/05/22 - Orígenes del tango',
+            date: '2024/05/22',
+            name: 'Orígenes del tango',
+            time: 7,
             href: 'Origins',
-            date: new Date(`2024/05/22 ${GMT}`),
         },
     ];
     const ordered = posts.sort((a,b) => {return a.date > b.date;});
@@ -29,7 +30,7 @@ const Component = () => {
         <>
         <ListGroup as="ul" variant="secondary">
             {ordered.map((post) => {
-                const label = post.name;
+                const label = `${post.date} - ${post.name} (${post.time}min)`;
                 const href = post.href;
 
                 return (

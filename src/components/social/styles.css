@@ -125,6 +125,7 @@
 }
 
 .menu-line.open {
+    left: 0.5em;
     top: calc(0.75em + var(--top-toggle));
     z-index: 120;
 }
@@ -135,6 +136,9 @@
 }
 
 @media (max-width: 1250px) {
+    .menu-line.open {
+        left: 0.5em;
+    }
     .menu-line .btn-app {
         right: -3.25em;
         pointer-events: none;
@@ -145,6 +149,9 @@
     }
 }
 @media (max-width: 900px) {
+    .menu-line.open {
+        left: 0;
+    }
     .menu-line .btn-app {
         right: -3em;
         pointer-events: none;
@@ -162,6 +169,11 @@
     }
     .menu-line.open .btn-app {
         right: calc(1.25em + var(--right-toggle));
+    }
+}
+@media (max-width: 600px) {
+    .menu-line.open {
+        left: -0.75em;
     }
 }
 

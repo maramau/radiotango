@@ -4,7 +4,7 @@
     width: 42vw;
     background-color: var(--color-background-soft);
     left: 7vw;
-    z-index: 50;
+    z-index: 120;
     opacity: 1;
 
     --width-panel-left: 42vw;
